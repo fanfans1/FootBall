@@ -97,7 +97,7 @@
         cell = [[[NSBundle mainBundle]loadNibNamed:@"First_3TableViewCell" owner:nil options:nil]firstObject];
         
         NSString *str = [NSString stringWithFormat:@"http://in.3b2o.com/img/show/sid/%@/w//h//t/1/show.jpg",[[_mutableArr objectAtIndex:indexPath.row] objectForKey:@"imgSid"]];
-        [cell.imagei sd_setImageWithURL:[NSURL URLWithString:str]placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+//        [cell.imagei sd_setImageWithURL:[NSURL URLWithString:str]placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
         cell.title.text = [[_mutableArr objectAtIndex:indexPath.row] objectForKey:@"title"];
         cell.title2.text = [[_mutableArr objectAtIndex:indexPath.row] objectForKey:@"digest"];
         

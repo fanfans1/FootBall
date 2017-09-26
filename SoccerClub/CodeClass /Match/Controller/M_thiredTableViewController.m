@@ -171,12 +171,12 @@
         cell.backImage.image = [UIImage imageNamed:@"Match_backImage.png"];
         cell.guestInfo.text = [[dic1 objectForKey:@"guestInfo"] objectForKey:@"name"];
         NSURL *url = [NSURL URLWithString:[[dic1 objectForKey:@"guestInfo"] objectForKey:@"logo"]];
-        [cell.guestLogo sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
+//        [cell.guestLogo sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
         cell.guestScore.text = [[dic1 objectForKey:@"guestInfo"] objectForKey:@"score"];
         cell.homeInfo.text = [[dic1 objectForKey:@"homeInfo"] objectForKey:@"name"];
         
         NSURL *url1 = [NSURL URLWithString:[[dic1 objectForKey:@"homeInfo"] objectForKey:@"logo"]];
-        [cell.homeLogo sd_setImageWithURL:url1 placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
+//        [cell.homeLogo sd_setImageWithURL:url1 placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
         
         cell.homeScore.text = [[dic1 objectForKey:@"homeInfo"] objectForKey:@"score"];
         cell.soccerLeagueName.text = [dic1 objectForKey:@"leagueDesc"];

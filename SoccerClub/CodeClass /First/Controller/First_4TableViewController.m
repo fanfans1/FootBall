@@ -139,12 +139,11 @@
     // 将请求放入子线程中
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[[_mutableArr objectAtIndex:indexPath.row] objectForKey:@"firstImg"]]]];
-        CGSize size = CGSizeMake(CGRectGetWidth(self.view.frame)-20, 200);
-        UIImage *myImage = [self cutImage:image rect:size];
-        
         // 当请求到图片的时候，回主线程为cell添加照片
         dispatch_async(dispatch_get_main_queue(), ^{
+            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[[_mutableArr objectAtIndex:indexPath.row] objectForKey:@"firstImg"]]]];
+            CGSize size = CGSizeMake(CGRectGetWidth(self.view.frame)-20, 200);
+            UIImage *myImage = [self cutImage:image rect:size];
             
             [cell.imagi setImage:myImage];
         });

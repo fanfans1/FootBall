@@ -210,11 +210,12 @@
             [view1 addSubview:xianView];
             // 主场 标志
             UIImageView *zhuImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, (CGRectGetHeight(view1.frame)/7*3)+1, 15, 15)];
-            [zhuImageView sd_setImageWithURL:[NSURL URLWithString:[model2.guestInfo valueForKey:@"logo"]]placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
+//            [zhuImageView sd_setImageWithURL:[NSURL URLWithString:[model2.guestInfo valueForKey:@"logo"]]placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
+            
             [view1 addSubview:zhuImageView];
             // 客场 标志
             UIImageView *keImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, (CGRectGetHeight(view1.frame)/7*5)+1, 15, 15)];
-            [keImageView sd_setImageWithURL:[NSURL URLWithString:[model2.homeInfo valueForKey:@"logo"]]placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
+//            [keImageView sd_setImageWithURL:[NSURL URLWithString:[model2.homeInfo valueForKey:@"logo"]]placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
             [view1 addSubview:keImageView];
             // 主 队名
             UILabel *zhumLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, (CGRectGetHeight(view1.frame)/7*2)+4, 100, 30)];
@@ -258,8 +259,8 @@
             imageView.tag = 1000+i;
             
                 NSURL *url = [NSURL URLWithString:model1.thumb];
-                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
-                
+//                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+            
 
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetHeight(_scrollView.frame)-30, CGRectGetWidth(self.view.frame)-70, 30)];
             label.text = model1.scTitle;
@@ -320,23 +321,7 @@
 
 }
 
-//-(void)imageViewAction{
-//    UIScrollView *scrollView = [self.view viewWithTag:2000];
-//    CGPoint offSet = scrollView.contentOffset;
-//    if (offSet.x < CGRectGetWidth(self.view.bounds)*3) {
-//        offSet.x += self.view.bounds.size.width;
-//        //改变UIpageControl
-//        UIPageControl *pageControl = [self.view viewWithTag:3000];
-//        int pageNum = offSet.x/self.view.bounds.size.width;
-//        pageControl.currentPage = pageNum;
-//        [scrollView setContentOffset:offSet animated:YES];
-//    }else {
-//        [scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-//        UIPageControl *pageControl = [self.view viewWithTag:3000];
-//        pageControl.currentPage = 0;
-//    }
-//    
-//}
+
 
 
 // 手势实现scrollView.
@@ -436,18 +421,23 @@
     NSString *str1 = model.imgSid;
     NSString *str2 = @"/w/240/h/160/t/1/show.jpg";
     NSString *str = [NSString stringWithFormat:@"%@%@%@",str0,str1,str2];
+    
+//  废弃
     // 将请求放入子线程中
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
+
         UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:str]]];
-        
+
         // 当请求到图片的时候，回主线程为cell添加照片
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+
             cell.imageView0.image = image;
-        
+
         });
     });
+
+    
+    
     cell.titleLabel.text = model.title;
     cell.fuTitleLabel.text = model.digest;
     if ([model.button isEqual: @"专题"] || [model.button isEqual: @"深度"]||[model.button isEqual: @"直播"]) {

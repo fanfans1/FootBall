@@ -473,7 +473,7 @@
             FirstTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recommendCell" forIndexPath:indexPath];
             NSDictionary *detailDic = [_recommendArray objectAtIndex:indexPath.row];
             NSString *imgUrl = [NSString stringWithFormat:@"http://in.3b2o.com/img/show/sid/%@/w//h//t/1/show.jpg",[detailDic objectForKey:@"imgSid"]];
-            [cell.imageView0 sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+//            [cell.imageView0 sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
             cell.titleLabel.text = [detailDic objectForKey:@"title"];
             cell.fuTitleLabel.text = [detailDic objectForKey:@"digest"];
             NSString *button = [detailDic objectForKey:@"button"];
@@ -496,7 +496,7 @@
         case 1001:{
             VideoSiftTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"videoCell" forIndexPath:indexPath];
             NSDictionary *detailDic = [_videoArray objectAtIndex:indexPath.row];
-            [cell.videoImageView sd_setImageWithURL:[NSURL URLWithString:[detailDic objectForKey:@"imgUrl"]] placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+//            [cell.videoImageView sd_setImageWithURL:[NSURL URLWithString:[detailDic objectForKey:@"imgUrl"]] placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
             cell.videoNameLabel.text = [detailDic objectForKey:@"name"];
             cell.timeLabel.text = [detailDic objectForKey:@"modtime"];
             cell.videoLengthLabel.text = [detailDic objectForKey:@"blength"];
@@ -517,7 +517,7 @@
             cell.shuzi.text = [detailDic objectForKey:@"comm_count"];
             cell.shijian.text = [detailDic objectForKey:@"modtime_desc"];
             NSString *imgUrl = [NSString stringWithFormat:@"http://in.3b2o.com/img/show/sid/%@/w//h//t/1/show.jpg",[detailDic objectForKey:@"thumb_id"]];
-            [cell.zhaopian sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+//            [cell.zhaopian sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
             return cell;
         }
             break;
