@@ -35,7 +35,7 @@
     
     FirstRootViewController *firstVC = [[FirstRootViewController alloc]init];
     MatchRootViewController *matchVC = [[MatchRootViewController alloc]init];
-    VideoRootViewController *videoVC = [[VideoRootViewController alloc]init];
+    WebServerViewController *videoVC = [[WebServerViewController alloc]init];
     UINavigationController *firstNavC = [[UINavigationController alloc]initWithRootViewController:firstVC];
     UINavigationController *matchNavC = [[UINavigationController alloc]initWithRootViewController:matchVC];
     UINavigationController *videoNavC = [[UINavigationController alloc]initWithRootViewController:videoVC];
@@ -47,7 +47,7 @@
     firstNavC.tabBarItem.image = [UIImage imageNamed:@"tabbar_home.png"];
     matchNavC.tabBarItem.title = @"比赛";
     matchNavC.tabBarItem.image = [UIImage imageNamed:@"tabbar_vs.png"];
-    videoNavC.tabBarItem.title = @"视频";
+    videoNavC.tabBarItem.title = @"资讯";
     videoNavC.tabBarItem.image = [UIImage imageNamed:@"tabbar_video.png"];
     
     

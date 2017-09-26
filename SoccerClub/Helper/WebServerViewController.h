@@ -10,7 +10,7 @@
 #import <WebKit/WebKit.h>
 @interface WebServerViewController : UIViewController<WKNavigationDelegate>
 
-@property (nonatomic, retain) WKWebView* webView;
+ 
  
 
 @end
