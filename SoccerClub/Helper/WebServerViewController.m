@@ -1,87 +1,109 @@
 //
-//  WebServerViewController.m
-//  LongHaoLi
+//  KongViewController.m
+//  SoccerClub
 //
-//  Created by Guang shen on 2017/8/22.
-//  Copyright © 2017年 fanfan. All rights reserved.
+//  Created by xalo on 16/1/14.
+//  Copyright © 2016年 程龙. All rights reserved.
 //
-
 
 #import "WebServerViewController.h"
-#import "MBViewController.h"
 
-@interface WebServerViewController ()<WKNavigationDelegate>
+@interface WebServerViewController ()<UIWebViewDelegate>
 
 @end
 
-@implementation WebServerViewController{
-    MBViewController *mb;
-}
+@implementation WebServerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setBarTintColor: BACKGROUNDCOLOR];
-    // Do any additional setup after loading the view.
-    WKWebView* webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
-    self.webView = webView;
-    self.webView.navigationDelegate = self;
-   
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    UIScrollView *scollview=(UIScrollView *)[[_webView subviews]objectAtIndex:0];
-    scollview.showsVerticalScrollIndicator = NO;
-    scollview.bounces=NO;
- 
-    [self setWashWeb];
-    [self.view addSubview:webView];
     
-    // Do any additional setup after loading the view.
-}
-
-
-- (void)setWashWeb{
-    NSURL* url = [NSURL URLWithString:@"http://sports.163.com/world/"];//创建URL
+    UIButton *Btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    Btn.frame = CGRectMake(5, 22, 60, 40);
+    [Btn setTitle:@"返回" forState:UIControlStateNormal];
+    [Btn addTarget:self action:@selector(leftBtnItem) forControlEvents:UIControlEventTouchUpInside];
+    Btn.titleLabel.font = [UIFont systemFontOfSize:20];
+    //    [self.view addSubview:Btn];
     
-    NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
-    [_webView loadRequest:request];//加载
-    mb = [[MBViewController alloc] initWith];
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 64)];
+    headerView.backgroundColor = BACKGROUNDCOLOR;
+    [headerView addSubview:Btn];
+    [self.view addSubview:headerView];
+    //     拼接
+    //    NSString *string = [NSString stringWithFormat:@"http://www.zhiboba.com/article/show/%@",self.str];
+    
+    //    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    //    [tapGR setNumberOfTapsRequired:2];
+    //    [tapGR setNumberOfTouchesRequired:1];
+    //    self.view.userInteractionEnabled = YES;
+    //    [self.view addGestureRecognizer:tapGR];
+    
+    
+    
+    // 使用web承接HTML
+    UIWebView *webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-64)];
+    // 将请求放入子线程中
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        NSURL *url = [NSURL URLWithString:@""];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        [webView loadRequest:request];
+        
+        // 回主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            webView.delegate = self;
+            [self.view addSubview:webView];
+        });
+    });
     
 }
 
-// 页面加载失败时调用
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
-//    ALERT(@"加载失败");
-    
-    [mb remove];
+//-(void)tapAction{
+//    []
+//}
+
+// 去除广告
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('header').style.display = 'none'"];
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('banner').style.display = 'none'"]; // MAC广告
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('index_view_navigator').style.display = 'none'"];
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('BAIDU_EXP_MOB__wrapper_u2363177_0').style.display = 'none'"];
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('commentArea')[0].style.display = 'none'"];
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('footer')[0].style.display = 'none'"];
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('STRONG')[0].innerText = ''"];
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('pos')[0].style.display = 'none'"];
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('banner')[0].style.display = 'none'"];
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('zbb_path').style.display = 'none'"];
 }
-
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation { // 类似 UIWebView 的 －webViewDidFinishLoad:
-    [mb remove];
+-(void)leftBtnItem{
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
-
-
-
-- (void)viewWillAppear:(BOOL)animated{
-    self.tabBarController.tabBar.hidden = YES;
-    [super viewWillAppear:YES];
-}
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+// 创建边缘轻扫手势
+-(void)screenEdgePan{
+    UIScreenEdgePanGestureRecognizer *screenEdgePan = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(leftBtnItem)];
+    screenEdgePan.edges = UIRectEdgeLeft;
+    [self.view addGestureRecognizer:screenEdgePan];
 }
-*/
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
+
