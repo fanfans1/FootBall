@@ -17,32 +17,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"资讯";
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     // 使用web承接HTML
     UIWebView *webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-64)];
-    // 将请求放入子线程中
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
-        // 回主线程
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            NSURL *url = [NSURL URLWithString:@"http://sports.163.com/world/"];
-            NSURLRequest *request = [NSURLRequest requestWithURL:url];
-            [webView loadRequest:request];
-            
-            webView.delegate = self;
-            [self.view addSubview:webView];
-        });
-    });
+    //
+    NSURL *url = [NSURL URLWithString:@"https://m.dszuqiu.com/news"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [webView loadRequest:request];
+    
+    
+    //  网页适配高度
+    CGSize contentSize = webView.scrollView.contentSize;
+    CGSize viewSize = self.view.bounds.size;
+    
+    float rw = viewSize.width / contentSize.width;
+    
+    webView.scrollView.minimumZoomScale = rw;
+    webView.scrollView.maximumZoomScale = rw;
+    webView.scrollView.zoomScale = rw;
+    
+    webView.delegate = self;
+    [self.view addSubview:webView];
+    
+    
     
 }
 
-//-(void)tapAction{
-//    []
-//}
 
 // 去除广告
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
+    
+    //杰哥去广告
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('.downloadApp').style.display = 'none'"];
+    
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('ntes_nav_wrap ntes-nav-wrap-resize1024')[0].style.display = 'none'"];
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('N-nav-channel JS_NTES_LOG_FE')[0].style.display = 'none'"]; // MAC广告
      [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('channel')[0].style.display = 'none'"]; // MAC广告
