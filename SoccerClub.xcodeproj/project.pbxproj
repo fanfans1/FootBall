@@ -97,6 +97,7 @@
 		AA3EEFAA1F7A458A0008D992 /* WebServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFA91F7A458A0008D992 /* WebServerViewController.m */; };
 		AA3EEFAD1F7A45950008D992 /* MBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFAB1F7A45950008D992 /* MBViewController.m */; };
 		AA3EEFB01F7A45B00008D992 /* MJPush.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFAF1F7A45B00008D992 /* MJPush.m */; };
+		AA3EEFB11F7A4E570008D992 /* WebServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFA91F7A458A0008D992 /* WebServerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -885,7 +886,7 @@
 				TargetAttributes = {
 					3CD6FE521C435DFA00281B36 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = J9C3B435Q6;
+						DevelopmentTeam = C5BX548R5T;
 					};
 					3CD6FE651C435DFA00281B36 = {
 						CreatedOnToolsVersion = 7.1;
@@ -1088,6 +1089,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3EEFB11F7A4E570008D992 /* WebServerViewController.m in Sources */,
 				3CD6FE6B1C435DFA00281B36 /* SoccerClubTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1220,7 +1222,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = J9C3B435Q6;
+				DEVELOPMENT_TEAM = C5BX548R5T;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SoccerClub/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = SoccerClub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -1240,7 +1242,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = J9C3B435Q6;
+				DEVELOPMENT_TEAM = C5BX548R5T;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SoccerClub/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = SoccerClub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;

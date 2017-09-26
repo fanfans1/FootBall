@@ -38,7 +38,7 @@
         if (error) {
             failure(error);
             [mb remove];
-            ALERT(@"网络有误");
+//            ALERT(@"网络有误");
             
         }
     }];
@@ -67,7 +67,7 @@
             failure(error);
             //            [LZBLoadingView dismissLoadingView];
             [mb remove];
-           ALERT(@"网络有误");
+//           ALERT(@"网络有误");
             NSLog(@"%@",error);
             
         }
@@ -116,7 +116,7 @@
         if (failure) {
             [mb remove];
             failure(error);
-           ALERT(@"网络有误");
+//           ALERT(@"网络有误");
             
         }
     }];
@@ -159,7 +159,7 @@
         if (failure) {
             [mb remove];
             failure(error);
-           ALERT(@"网络有误");
+//           ALERT(@"网络有误");
         }
     }];
 }
