@@ -118,7 +118,6 @@
     if (_data) {
          dic = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingAllowFragments error:nil];
     }
-    
     if (responseDict) {
         dic = responseDict;
     }

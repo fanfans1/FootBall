@@ -20,7 +20,9 @@
 @end
 
 @implementation M_thiredTableViewController
-
+{
+    NSDictionary *responseDict;
+}
 
 -(void)loadData{
     //  使用系统默认的刷新提示
@@ -86,11 +88,34 @@
 }
 
 -(void)jiexi{
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingAllowFragments error:nil];
+    NSDictionary *dic = [NSDictionary dictionary];
+    
+    if (_data) {
+        dic = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingAllowFragments error:nil];
+    }
+    if (responseDict) {
+        dic = responseDict;
+    }
     _array = [NSMutableArray arrayWithArray:[dic objectForKey:@"games"]];
    
 }
-
+#pragma mark -第一次加载数据
+- (void)firstLoadData{
+    NSString *urlString = @"http://zhiboba.3b2o.com/mobileApi/programsV3/category/soccer/action/older?1452610290";
+    
+    __weak typeof (self)weakSelf = self;
+    [HttpManager getUrl: urlString Parameters: nil success:^(id responseData) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([responseData isKindOfClass: [NSDictionary class]]) {
+                responseDict = responseData;
+                [weakSelf jiexi];
+                [weakSelf.tableView reloadData];
+            }
+        });
+    } failure:^(NSError *error) {
+        NSLog(@"请求发生错误");
+    }];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -99,34 +124,12 @@
     UINavigationController *navC = [[UINavigationController alloc]init];
     [self addChildViewController:navC];
     
-    NSString *urlString = @"http://zhiboba.3b2o.com/mobileApi/programsV3/category/soccer/action/older?1452610290";
-    NSURL *url = [NSURL URLWithString:urlString];
-    _data = [NSData dataWithContentsOfURL:url];
-    
-    
-    
-    if (!_data) {
-       _data = [CacheHelper readCacheWithName:@"M_thired"];
-        
-    }else{
-    
-    [CacheHelper writeCacheWithData:_data name:@"M_thired"];
-
-    }
-    [self jiexi];
-//    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingAllowFragments error:nil];
-//    
-//    _array = [dic objectForKey:@"games"];
+    [self firstLoadData];
     
     
     [self.tableView registerClass:[M_thiredTableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.tableView registerClass:[M_thiredTableViewCell class] forCellReuseIdentifier:@"CELL"];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
