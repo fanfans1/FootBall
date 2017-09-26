@@ -1,8 +1,8 @@
 //
 //  WebServerViewController.h
-//  LongHaoLi
+//  Foods
 //
-//  Created by Guang shen on 2017/8/22.
+//  Created by yy on 2017/1/4.
 //  Copyright © 2017年 fanfan. All rights reserved.
 //
 
@@ -10,7 +10,9 @@
 #import <WebKit/WebKit.h>
 @interface WebServerViewController : UIViewController<WKNavigationDelegate>
 
- 
- 
+@property (nonatomic, retain) WKWebView* webView;
+@property (nonatomic, retain)NSString *url;
 
 @end
+
+
