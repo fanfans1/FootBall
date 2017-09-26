@@ -37,7 +37,21 @@
     [self setWashWeb];
     [self.view addSubview:webView];
     
-    // Do any additional setup after loading the view.
+    
+    //  网页适配高度
+    CGSize contentSize = webView.scrollView.contentSize;
+    CGSize viewSize = self.view.bounds.size;
+    
+    float rw = viewSize.width / contentSize.width;
+    
+    webView.scrollView.minimumZoomScale = rw;
+    webView.scrollView.maximumZoomScale = rw;
+    webView.scrollView.zoomScale = rw;
+    
+    webView.delegate = self;
+    [self.view addSubview:webView];
+    
+
 }
 
 
