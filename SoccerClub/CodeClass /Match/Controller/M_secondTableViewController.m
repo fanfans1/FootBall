@@ -22,7 +22,9 @@
 @end
 
 @implementation M_secondTableViewController
-
+{
+    NSDictionary *responseDict;
+}
 
 -(void)loadData{
     //  使用系统默认的刷新提示
@@ -106,9 +108,32 @@
  
 }
 
--(void)jiexi{
+#pragma mark -第一次加载数据
+- (void)firstLoadData{
+    NSString *urlString = @"http://zhiboba.3b2o.com/mobileApi/programsV3/category/soccer?1452154294";
     
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingAllowFragments error:nil];
+    __weak typeof (self)weakSelf = self;
+    [HttpManager getUrl: urlString Parameters: nil success:^(id responseData) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([responseData isKindOfClass: [NSDictionary class]]) {
+                responseDict = responseData;
+                [weakSelf jiexi];
+                [weakSelf.tableView reloadData];
+            }
+        });
+    } failure:^(NSError *error) {
+        NSLog(@"请求发生错误");
+    }];
+}
+-(void)jiexi{
+    NSDictionary *dic = [NSDictionary dictionary];
+    
+    if (_data) {
+        dic = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingAllowFragments error:nil];
+    }
+    if (responseDict) {
+        dic = responseDict;
+    }
     
     _array = [NSMutableArray arrayWithArray:[dic objectForKey:@"games"]];
     
@@ -137,24 +162,7 @@
     UINavigationController *navC = [[UINavigationController alloc]init];
     [self addChildViewController:navC];
     
-    NSString *urlString = @"http://zhiboba.3b2o.com/mobileApi/programsV3/category/soccer?1452154294";
-    NSURL *url = [NSURL URLWithString:urlString];
-    
-    _data = [NSData dataWithContentsOfURL:url];
-    if (!_data) {
-        _data = [CacheHelper readCacheWithName:@"M_second"];
-    }else{
-    
-    [CacheHelper writeCacheWithData:_data name:@"M_second"];
-    
-     
-    }
-    [self jiexi];
-//    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingAllowFragments error:nil];
-//    
-//    
-//    _array = [dic objectForKey:@"games"];
-    
+    [self firstLoadData];
    
     [self.tableView registerClass:[M_firstTableViewCell class] forCellReuseIdentifier:@"cell"];
     
