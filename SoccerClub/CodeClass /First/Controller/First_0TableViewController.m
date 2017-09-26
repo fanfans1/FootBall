@@ -184,7 +184,7 @@
         [_touView addSubview:_scrollView];
     
     
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < _mutableArr2.count; i++) {
             Model2 *model2 = [_mutableArr2 objectAtIndex:i];
             // 创建俩view
             UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(((CGRectGetWidth(self.view.frame)/2*1+5))*i+5, CGRectGetHeight(_scrollView.frame)+10, (CGRectGetWidth(self.view.frame)/2*1)-15, CGRectGetHeight(_scrollView.frame)/2*1)];

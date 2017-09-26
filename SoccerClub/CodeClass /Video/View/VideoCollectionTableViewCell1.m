@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
 }
 - (UILabel *)nameLabel{
     if (!_nameLabel) {

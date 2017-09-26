@@ -923,7 +923,7 @@
 				TargetAttributes = {
 					3CD6FE521C435DFA00281B36 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = J9WL62M9S7;
+						DevelopmentTeam = C5BX548R5T;
 					};
 					3CD6FE651C435DFA00281B36 = {
 						CreatedOnToolsVersion = 7.1;
@@ -1222,6 +1222,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = C5BX548R5T;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SoccerClub/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = SoccerClub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -1240,6 +1241,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = C5BX548R5T;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SoccerClub/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = SoccerClub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
