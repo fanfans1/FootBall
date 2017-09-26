@@ -103,20 +103,20 @@
             // 将请求放入子线程中
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
                 
-                UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[arr[i] objectForKey:@"url"]]]];
-                CGFloat width = CGRectGetWidth(self.view.frame);
-                CGSize size = image.size;
-                CGFloat height = width * size.height / size.width;
-                
-                CGFloat y = CGRectGetHeight(scrollView.frame)/2-height/4*3;
-                imageView = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)*i, y, CGRectGetWidth(scrollView.frame), height)];
-                imageView.image = [UIImage imageNamed:@"Placegolder.png"];
-                [scrollView addSubview:imageView];
-                if (y<0) {
-                    y=0;
-                }
                 // 当请求到图片的时候，回主线程为cell添加照片
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[arr[i] objectForKey:@"url"]]]];
+                    CGFloat width = CGRectGetWidth(self.view.frame);
+                    CGSize size = image.size;
+                    CGFloat height = width * size.height / size.width;
+                    
+                    CGFloat y = CGRectGetHeight(scrollView.frame)/2-height/4*3;
+                    imageView = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)*i, y, CGRectGetWidth(scrollView.frame), height)];
+                    imageView.image = [UIImage imageNamed:@"Placegolder.png"];
+                    [scrollView addSubview:imageView];
+                    if (y<0) {
+                        y=0;
+                    }
                     imageView.image = image;
                 });
             });

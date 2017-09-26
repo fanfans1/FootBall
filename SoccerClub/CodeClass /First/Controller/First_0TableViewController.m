@@ -472,11 +472,12 @@
         if ([[model.target objectForKey:@"source"] isEqualToString:@"article"]) {
             KongViewController *kongVC = [[KongViewController alloc] init];
             kongVC.str = [model.web objectForKey:@"url"];
-            [self presentViewController:kongVC animated:YES completion:nil];  // 模态
+              [self.navigationController pushViewController:kongVC animated:YES];
+//            [self presentViewController:kongVC animated:YES completion:nil];  // 模态
         }else{
             
-            //        [self.navigationController pushViewController:m2_thired animated:YES];
-            [self presentViewController:m2_thired animated:YES completion:nil];
+                    [self.navigationController pushViewController:m2_thired animated:YES];
+//            [self presentViewController:m2_thired animated:YES completion:nil];
         }
         
     }else if ([model.button isEqual: @"视频"]){
@@ -493,8 +494,8 @@
             NSDictionary *videoDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             NSDictionary *videoPathDic = [videoDic objectForKey:@"defaultPlayer"];
             kongVC.str = [videoPathDic objectForKey:@"url"];
-//            [self.navigationController pushViewController:kongVC animated:YES];
-            [self presentViewController:kongVC animated:YES completion:nil];
+            [self.navigationController pushViewController:kongVC animated:YES];
+//            [self presentViewController:kongVC animated:YES completion:nil];
         }else{
             M2_thiredViewController *m2_thired = [[M2_thiredViewController alloc] init];
             m2_thired.sid = sid;
@@ -511,14 +512,15 @@
         RealizeFirst_4ViewController *kongVC = [[RealizeFirst_4ViewController alloc] init];
         kongVC.str = [model.target objectForKey:@"sid"];
         //        NSLog(@"%@",kongVC.str);
-        [self presentViewController:kongVC animated:YES completion:nil];  // 模态
+//        [self presentViewController:kongVC animated:YES completion:nil];  // 模态
+        [self.navigationController pushViewController:kongVC animated:YES];
     }else{
         KongViewController *kongVC = [[KongViewController alloc] init];
         NSString *str = [NSString stringWithFormat:@"http://zhiboba.3b2o.com/article/showForMobile/%@",[model.target objectForKey:@"sid"]];
         kongVC.str = str;
 //        NSLog(@"%@",kongVC.str);
-        [self presentViewController:kongVC animated:YES completion:nil];  // 模态
-        //        [self.navigationController pushViewController:kongVC animated:YES];
+//        [self presentViewController:kongVC animated:YES completion:nil];  // 模态
+                [self.navigationController pushViewController:kongVC animated:YES];
     }
     }
 }
