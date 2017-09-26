@@ -10,6 +10,8 @@
 		34165ACE1F7A1E650055BC2E /* libPods-SoccerClub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34165ACF1F7A1E650055BC2E /* libPods-SoccerClub.a */; };
 		34165AE21F7A561A0055BC2E /* HttpManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 34165ADE1F7A53250055BC2E /* HttpManager.h */; };
 		34165AE31F7A561F0055BC2E /* HttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34165ADF1F7A53250055BC2E /* HttpManager.m */; };
+		34165AEA1F7A73A80055BC2E /* UserCenterMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34165AE81F7A73A80055BC2E /* UserCenterMainVC.m */; };
+		34165AEB1F7A73A80055BC2E /* UserCenterMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34165AE91F7A73A80055BC2E /* UserCenterMainVC.xib */; };
 		3C3B45DD1C5A1B0500BA9317 /* logoPlace.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C3B45DC1C5A1B0500BA9317 /* logoPlace.jpg */; };
 		3C520F901C4FB96300AB067E /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C520F8F1C4FB96300AB067E /* SearchViewController.m */; };
 		3C520F931C5067F100AB067E /* First_0TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C520F921C5067F100AB067E /* First_0TableViewController.m */; };
@@ -136,6 +138,9 @@
 		34165ADE1F7A53250055BC2E /* HttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpManager.h; sourceTree = "<group>"; };
 		34165ADF1F7A53250055BC2E /* HttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpManager.m; sourceTree = "<group>"; };
 		34165AE11F7A53580055BC2E /* DefineMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineMacro.h; sourceTree = "<group>"; };
+		34165AE71F7A73A80055BC2E /* UserCenterMainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCenterMainVC.h; sourceTree = "<group>"; };
+		34165AE81F7A73A80055BC2E /* UserCenterMainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCenterMainVC.m; sourceTree = "<group>"; };
+		34165AE91F7A73A80055BC2E /* UserCenterMainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCenterMainVC.xib; sourceTree = "<group>"; };
 		3C3B45DC1C5A1B0500BA9317 /* logoPlace.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logoPlace.jpg; sourceTree = "<group>"; };
 		3C520F8E1C4FB95B00AB067E /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		3C520F8F1C4FB96300AB067E /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
@@ -367,6 +372,32 @@
 				34165AE11F7A53580055BC2E /* DefineMacro.h */,
 			);
 			path = Define;
+			sourceTree = "<group>";
+		};
+		34165AE41F7A73480055BC2E /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				34165AE61F7A73480055BC2E /* ViewController */,
+				34165AE51F7A73480055BC2E /* View */,
+			);
+			path = UserCenter;
+			sourceTree = "<group>";
+		};
+		34165AE51F7A73480055BC2E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		34165AE61F7A73480055BC2E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				34165AE71F7A73A80055BC2E /* UserCenterMainVC.h */,
+				34165AE81F7A73A80055BC2E /* UserCenterMainVC.m */,
+				34165AE91F7A73A80055BC2E /* UserCenterMainVC.xib */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		3C520F941C50781E00AB067E /* MBProgressHUD */ = {
@@ -684,6 +715,7 @@
 		3CD6FE881C435F7400281B36 /* CodeClass  */ = {
 			isa = PBXGroup;
 			children = (
+				34165AE41F7A73480055BC2E /* UserCenter */,
 				AA3EEFB21F7A5E260008D992 /* Login */,
 				3CD6FEF91C43F8FF00281B36 /* Commen */,
 				3CD6FEFF1C43F90000281B36 /* First */,
@@ -974,6 +1006,7 @@
 				AA3EEFCA1F7A62C60008D992 /* ic_landing_nickname.png in Resources */,
 				AA3EEFCB1F7A62C60008D992 /* bg4.jpg in Resources */,
 				AA3EEFCC1F7A62C60008D992 /* goback_back_orange_on.png in Resources */,
+				34165AEB1F7A73A80055BC2E /* UserCenterMainVC.xib in Resources */,
 				AA3EEFCD1F7A62C60008D992 /* mm_normal.png in Resources */,
 				3CB82A231C4A260800DFF46E /* First_1TableViewCell.xib in Resources */,
 				3CB829CB1C4920AF00DFF46E /* MJRefresh.bundle in Resources */,
@@ -1133,6 +1166,7 @@
 				3CA7830A1C4F2C0600829815 /* VideoSiftTableViewController.m in Sources */,
 				3CB82A261C4A260800DFF46E /* First_3TableViewController.m in Sources */,
 				3CB82A271C4A260800DFF46E /* First_4TableViewController.m in Sources */,
+				34165AEA1F7A73A80055BC2E /* UserCenterMainVC.m in Sources */,
 				3CA7830B1C4F2C0600829815 /* VideotapeSubViewController.m in Sources */,
 				3CD6FF4D1C43FB2100281B36 /* JSONKit.m in Sources */,
 				3CA7830C1C4F2C0600829815 /* VideotapeTableViewController.m in Sources */,
