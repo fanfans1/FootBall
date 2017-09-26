@@ -8,11 +8,14 @@
 
 #import "CustomWebViewController.h"
 
+
 @interface CustomWebViewController ()<UIWebViewDelegate>
 
 @end
 
-@implementation CustomWebViewController
+@implementation CustomWebViewController{
+    MBRefresh *mb;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,10 +38,10 @@
     
     // 将请求放入子线程中
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        [webView loadRequest:request];
         // 当请求到图片的时候，回主线程为cell添加照片
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+            [webView loadRequest:request];
            [self.view addSubview:webView];
         });
     });
@@ -46,13 +49,16 @@
     
     UIPanGestureRecognizer *panGR = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panAction:)];
     [webView addGestureRecognizer:panGR];
+    mb = [[MBRefresh alloc] initWith];
 }
 // 边缘清扫
 - (void)panAction:(UIPanGestureRecognizer *)sender{
+    [mb remove];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)backAction{
+        [mb remove];
     if (self.navigationController) {
         [self.navigationController popViewControllerAnimated:YES];
     }else{
@@ -61,6 +67,7 @@
 }
 // 去除广告  暂时没有实现
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
+        [mb remove];
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('header').style.display = 'none'"];
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('banner').style.display = 'none'"]; // MAC广告
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('index_view_navigator').style.display = 'none'"];
@@ -72,6 +79,11 @@
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('banner')[0].style.display = 'none'"];
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('zbb_path').style.display = 'none'"];
 }
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+        [mb remove];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

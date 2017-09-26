@@ -113,10 +113,10 @@
     NSString *str = [NSString stringWithFormat:@"http://zhiboba.3b2o.com/article/showForMobile/%@",[[[_mutableArr objectAtIndex:indexPath.row] objectForKey:@"target"] objectForKey:@"sid"]];
     kongVC.str = str;
 //    NSLog(@"%@",kongVC.str);
-    [self presentViewController:kongVC animated:YES completion:nil];  // 模态
+//    [self presentViewController:kongVC animated:YES completion:nil];  // 模态
+//    }
+        [self.navigationController pushViewController:kongVC animated:YES];
     }
-    
-
 }
 
 /*

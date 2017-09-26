@@ -13,12 +13,15 @@
 
 @end
 
-@implementation M2_fourthViewController
+@implementation M2_fourthViewController{
+    MBRefresh *mb;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, CGRectGetWidth([UIScreen mainScreen].bounds) ,CGRectGetHeight([UIScreen mainScreen].bounds)-64)];
+    
     
     _webView.delegate = self;
     NSString *webString = [_receiveDic objectForKey:@"url"];
@@ -26,11 +29,19 @@
     
     [self.webView loadRequest:requst];
     [self.view addSubview:_webView];
-    
+    mb = [[MBRefresh alloc] initWith];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [mb remove];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    [mb remove];
 }
 
 -(void)backAction{
-    
+    [mb remove];
     [self.navigationController popViewControllerAnimated:YES];
 
     
