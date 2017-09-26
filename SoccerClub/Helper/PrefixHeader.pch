@@ -1,0 +1,49 @@
+//
+//  PrefixHeader.pch
+//  SoccerClub
+//
+//  Created by xalo on 16/1/11.
+//  Copyright © 2016年 程龙. All rights reserved.
+///Users/xalo/Desktop/MySoccerClub/SoccerClub/SoccerClub/Helper/PrefixHeader.pch
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "FirstRootViewController.h"
+#import "MatchRootViewController.h"
+#import "VideoRootViewController.h"
+#import "tabBarController.h"
+
+
+
+
+
+
+
+
+
+
+
+#import "CustomSegmentControl.h"
+#import "VideoSiftTableViewController.h"
+#import "VideoSiftTableViewCell.h"
+#import "VideoCollectionTableViewCell.h"
+#import "MJRefresh.h"
+#import "SandBoxPaths.h"
+#import "Reachability.h"
+#import "SearchViewController.h"
+#import "CacheHelper.h"  //缓存
+#import "TestNet.h"  // 判断网络
+#import "photoTableViewCell.h"
+
+
+
+
+
+
+#import "JSONKit.h"
+#import "UIImageView+WebCache.h"
+#endif /* PrefixHeader_pch */
