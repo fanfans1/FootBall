@@ -19,7 +19,18 @@
 
 
 
+#define COLOUR(R,G,B) [UIColor colorWithRed:R / 255.0 green:G / 255.0 blue:B / 255.0 alpha:1]
 
+#define RECTMACK(A,B,X,Y) CGRectMake(A * SCREEN_WIDTH/414, B * SCREEN_WIDTH/414,X *SCREEN_WIDTH/414,Y *SCREEN_WIDTH/414)
+
+#define FONT(A) [UIFont systemFontOfSize:A*SCREEN_WIDTH/414];
+
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+
+#define APPDELEGATE ((AppDelegate *)[UIApplication sharedApplication].delegate)
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define BACKGROUNDCOLOR COLOUR(33, 186, 255)
 
 
 
@@ -51,3 +62,4 @@
 
 
 #endif /* PrefixHeader_pch */
+

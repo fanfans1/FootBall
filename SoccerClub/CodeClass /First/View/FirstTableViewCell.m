@@ -12,8 +12,10 @@
 
 -(UIImageView *)imageView0{
     if (!_imageView0) {
-        _imageView0 = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, CGRectGetWidth(self.frame)/4*1, CGRectGetHeight(self.frame)-10)];
+        _imageView0 = [[UIImageView alloc] initWithFrame:RECTMACK(5, 5, 100, 70)];
         // 照片交互
+        _imageView0.layer.masksToBounds = YES;
+        _imageView0.layer.cornerRadius = 5;
         _imageView0.userInteractionEnabled = YES;
         [self addSubview:_imageView0];
     }
@@ -22,7 +24,7 @@
 
 -(UILabel *)titleLabel{
     if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.frame)/4*1)+5+10, 5, (CGRectGetWidth(self.frame)/4*3)-20, 25)];
+        _titleLabel = [[UILabel alloc] initWithFrame:RECTMACK(110, 5, 290, 20)];
         _titleLabel.font = [UIFont fontWithName:@"Arial-BoldMT" size:15];
         [self addSubview:_titleLabel];
     }
@@ -31,11 +33,11 @@
 
 -(UILabel *)fuTitleLabel{
     if (!_fuTitleLabel) {
-        _fuTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.frame)/4*1)+5+10, 23,(CGRectGetWidth(self.frame)/4*3)-20, 50)];
+        _fuTitleLabel = [[UILabel alloc] initWithFrame:RECTMACK(110, 25, 290, 50)];
         _fuTitleLabel.numberOfLines = 0;
         
         _fuTitleLabel.font = [UIFont systemFontOfSize:13];
-//        _fuTitleLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
+        //        _fuTitleLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
         [self addSubview:_fuTitleLabel];
         
     }
@@ -44,7 +46,7 @@
 //右下角btn
 -(UIView *)xiaView{
     if (!_xiaView) {
-        _xiaView = [[UIView alloc]initWithFrame:CGRectMake((CGRectGetWidth(self.frame)-30), 53, 23, 13)];
+        _xiaView = [[UIView alloc]initWithFrame:RECTMACK(350, 60, 30, 15)];
         _xiaView.backgroundColor = [UIColor redColor];
         [self addSubview:_xiaView];
     }
@@ -53,7 +55,7 @@
 
 -(UILabel *)xiaLabel{
     if (!_xiaLabel) {
-        _xiaLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 23, 13)];
+        _xiaLabel = [[UILabel alloc] initWithFrame:RECTMACK(0, 0, 30, 15)];
         _xiaLabel.font = [UIFont systemFontOfSize:10];
         _xiaLabel.textAlignment = NSTextAlignmentCenter;
         _xiaLabel.textColor = [UIColor whiteColor];
@@ -69,8 +71,10 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
 @end
+
+
