@@ -31,18 +31,32 @@
     [self setWashWeb];
     [self.view addSubview:webView];
     [_webView setAllowsBackForwardNavigationGestures:true];
+
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//
+//    btn.frame = CGRectMake(20, 30, 50, 30);
+////    [btn addTarget:self action:@selector(Back) forControlEvents:UIControlEventTouchUpInside];
+//    [btn setImage:[UIImage imageNamed:@"goback_back_orange_on.png"] forState:UIControlStateNormal];
+//    [self.view addSubview: btn];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"goback_back_orange_on.png"] style:UIBarButtonItemStyleDone target:self action:@selector(Back)];
     // Do any additional setup after loading the view.
 }
 
+- (void)Back{
+     [_webView goBack];
+}
 
 
 - (void)setWashWeb{
     NSURL* url = [NSURL URLWithString:@"https://m.dszuqiu.com/news"];//创建URL
+//    NSURL*url = [NSURL URLWithString:@"https://www.baidu.com"];
     
     NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
     [_webView loadRequest:request];//加载
     
     self.mb = [[MBRefresh alloc] initWith];
+   
+  
 //    self.webView.hidden = YES;
 }
 
