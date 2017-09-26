@@ -10,7 +10,7 @@
 #import "MBRefresh.h"
 
 
-@interface WebServerViewController ()
+@interface WebServerViewController ()<UIWebViewDelegate>
 
 @property (nonatomic, strong)MBRefresh *mb;
 
@@ -21,41 +21,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    WKWebView* webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
     
     self.title = @"资讯";
     self.automaticallyAdjustsScrollViewInsets = NO;
-    UIScrollView *scollview=(UIScrollView *)[[_webView subviews]objectAtIndex:0];
-    scollview.showsVerticalScrollIndicator = NO;
-    scollview.bounces=NO;
     
     // 使用web承接HTML
-    UIWebView *webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-64)];
+    UIWebView *mywebView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-64)];
     //
     NSURL *url = [NSURL URLWithString:@"https://m.dszuqiu.com/news"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [webView loadRequest:request];
+    [mywebView loadRequest:request];
     
     
     //  网页适配高度
-    CGSize contentSize = webView.scrollView.contentSize;
-    CGSize viewSize = self.view.bounds.size;
+//    CGSize contentSize = mywebView.scrollView.contentSize;
+//    CGSize viewSize = self.view.bounds.size;
+//    float rw = viewSize.width / contentSize.width;
+//    mywebView.scrollView.minimumZoomScale = rw;
+//    mywebView.scrollView.maximumZoomScale = rw;
+//    mywebView.scrollView.zoomScale = rw;
     
-    float rw = viewSize.width / contentSize.width;
+//
+    mywebView.delegate = self;
+    [self.view addSubview:mywebView];
     
-    webView.scrollView.minimumZoomScale = rw;
-    webView.scrollView.maximumZoomScale = rw;
-    webView.scrollView.zoomScale = rw;
-    
-    webView.delegate = self;
-    [self.view addSubview:webView];
-    
-
+    self.mb = [[MBRefresh alloc] initWith];
 }
 
 
 // 去除广告
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
+    
+    [self.mb remove];
     
     //杰哥去广告
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('.downloadApp').style.display = 'none'"];
@@ -70,10 +67,6 @@
      [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('topnews_block')[0].style.display = 'none'"]; // MAC广告
      [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('topnews_block')[1].style.display = 'none'"]; // MAC广告
     
-    NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
-    [_webView loadRequest:request];//加载
-    
-    self.mb = [[MBRefresh alloc] initWith];
 }
 
 
@@ -83,28 +76,29 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation { // 类似 UIWebView 的 －webViewDidFinishLoad:
     //    [LZBLoadingView dismissLoadingView];
     
-    [self.mb remove];
-}
-
-
-
-- (void)viewWillAppear:(BOOL)animated{
-    self.tabBarController.tabBar.hidden = YES;
-    [super viewWillAppear:YES];
-}
-
-
-- (void)jingshikuang:(NSString *)sender{//封装了一个警示框可以重复调用
-    
-    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:sender preferredStyle:UIAlertControllerStyleAlert];
-    AppDelegate *tempAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [tempAppDelegate.window.rootViewController presentViewController:alertC animated:YES completion:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [alertC dismissViewControllerAnimated:YES completion:nil];
-        });
-    }];
     
 }
+
+
+
+#pragma mark -没搞懂小范想干嘛
+
+//- (void)viewWillAppear:(BOOL)animated{
+//    self.tabBarController.tabBar.hidden = YES;
+//    [super viewWillAppear:YES];
+//}
+//
+//
+//- (void)jingshikuang:(NSString *)sender{//封装了一个警示框可以重复调用
+//
+//    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:sender preferredStyle:UIAlertControllerStyleAlert];
+//    AppDelegate *tempAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    [tempAppDelegate.window.rootViewController presentViewController:alertC animated:YES completion:^{
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [alertC dismissViewControllerAnimated:YES completion:nil];
+//        });
+//    }];
+//}
 
 
 - (void)didReceiveMemoryWarning {
