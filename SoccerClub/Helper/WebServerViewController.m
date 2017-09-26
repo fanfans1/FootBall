@@ -27,9 +27,6 @@
     self.webView.navigationDelegate = self;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    UIScrollView *scollview=(UIScrollView *)[[_webView subviews]objectAtIndex:0];
-    scollview.showsVerticalScrollIndicator = NO;
-    scollview.bounces=NO;
     
     [self setWashWeb];
     [self.view addSubview:webView];
