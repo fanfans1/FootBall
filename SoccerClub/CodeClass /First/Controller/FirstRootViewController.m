@@ -40,7 +40,7 @@
     
     
     _customSegmentControl = [[CustomSegmentControl alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 30)];
-    arr = @[@"推荐",@"新闻",@"专栏",@"热榜",@"图集"];
+    arr = @[@"推荐",@"专栏",@"热榜",@"图集"];
     [self.view addSubview:_customSegmentControl];
     [_customSegmentControl drawItemWithArr:arr];
     
@@ -66,23 +66,23 @@
     [self addChildViewController:_first_0TableViewController];   //跳转子视图需要用。
     [_myScrollView addSubview:_first_0TableViewController.view];
     // 新闻页面
-    _first_1TableViewController = [[First_1TableViewController alloc] init];
-    _first_1TableViewController.view.frame = CGRectMake(CGRectGetWidth(self.view.frame), 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-94-49);
-    [self addChildViewController:_first_1TableViewController];
-    [_myScrollView addSubview:_first_1TableViewController.view];
+//    _first_1TableViewController = [[First_1TableViewController alloc] init];
+//    _first_1TableViewController.view.frame = CGRectMake(CGRectGetWidth(self.view.frame), 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-94-49);
+//    [self addChildViewController:_first_1TableViewController];
+//    [_myScrollView addSubview:_first_1TableViewController.view];
     // 专栏页面
     _first_2TableViewController = [[First_2TableViewController alloc] init];
-    _first_2TableViewController.view.frame = CGRectMake(CGRectGetWidth(self.view.frame)*2, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-94-49);
+    _first_2TableViewController.view.frame = CGRectMake(CGRectGetWidth(self.view.frame), 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-94-49);
     [self addChildViewController:_first_2TableViewController];
     [_myScrollView addSubview:_first_2TableViewController.view];
     // 热榜页面
     _first_3TableViewController = [[First_3TableViewController alloc] init];
-    _first_3TableViewController.view.frame = CGRectMake(CGRectGetWidth(self.view.frame)*3, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-94-49);
+    _first_3TableViewController.view.frame = CGRectMake(CGRectGetWidth(self.view.frame)*2, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-94-49);
     [self addChildViewController:_first_3TableViewController];  // 给父view加导航控制器
     [_myScrollView addSubview:_first_3TableViewController.view];
     // 图集页面
     _first_4TableViewController = [[First_4TableViewController alloc] init];
-    _first_4TableViewController.view.frame = CGRectMake(CGRectGetWidth(self.view.frame)*4, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-94-49);
+    _first_4TableViewController.view.frame = CGRectMake(CGRectGetWidth(self.view.frame)*3, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-94-49);
     [self addChildViewController:_first_4TableViewController];
     [_myScrollView addSubview:_first_4TableViewController.view];
 //    // 数据页面

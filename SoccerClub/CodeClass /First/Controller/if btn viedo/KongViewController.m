@@ -18,14 +18,14 @@
     [super viewDidLoad];
     
     UIButton *Btn = [UIButton buttonWithType:UIButtonTypeSystem];
-    Btn.frame = CGRectMake(5, 22, 40, 40);
+    Btn.frame = CGRectMake(5, 22, 60, 40);
     [Btn setTitle:@"返回" forState:UIControlStateNormal];
     [Btn addTarget:self action:@selector(leftBtnItem) forControlEvents:UIControlEventTouchUpInside];
     Btn.titleLabel.font = [UIFont systemFontOfSize:20];
 //    [self.view addSubview:Btn];
     
     UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 64)];
-    headerView.backgroundColor = [UIColor colorWithRed:199/255.0 green:21/255.0 blue:133/255.0 alpha:1.0];
+    headerView.backgroundColor = BACKGROUNDCOLOR;
     [headerView addSubview:Btn];
     [self.view addSubview:headerView];
     //     拼接

@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // 设置导航条颜色
     UINavigationBar *bar = [UINavigationBar appearance] ;
-    bar.barTintColor = [UIColor colorWithRed:50/255.0 green:205/255.0 blue:50/255.0 alpha:1.0];
+    bar.barTintColor = BACKGROUNDCOLOR;
     
     //设置字体颜色
     bar.tintColor = [UIColor whiteColor];
