@@ -768,10 +768,10 @@
 		3CD6FEFA1C43F90000281B36 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3C520FE81C5206C100AB067E /* F~}DS{SWD476SGHO2H3GVN0.jpg */,
 				3CE8AA7A1C448A9D00D21D40 /* RootViewController.h */,
 				3CE8AA7B1C448A9D00D21D40 /* RootViewController.m */,
 				3CE8AA7C1C448A9D00D21D40 /* tabBarController.h */,
-				3C520FE81C5206C100AB067E /* F~}DS{SWD476SGHO2H3GVN0.jpg */,
 				3CE8AA7D1C448A9D00D21D40 /* tabBarController.m */,
 				3CE8AA8C1C44DC3300D21D40 /* CustomWebViewController.h */,
 				3CE8AA8D1C44DC3300D21D40 /* CustomWebViewController.m */,
@@ -923,7 +923,7 @@
 				TargetAttributes = {
 					3CD6FE521C435DFA00281B36 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = C5BX548R5T;
+						DevelopmentTeam = J9C3B435Q6;
 					};
 					3CD6FE651C435DFA00281B36 = {
 						CreatedOnToolsVersion = 7.1;
@@ -1222,7 +1222,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = C5BX548R5T;
+				DEVELOPMENT_TEAM = J9C3B435Q6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SoccerClub/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = SoccerClub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -1241,7 +1241,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = C5BX548R5T;
+				DEVELOPMENT_TEAM = J9C3B435Q6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SoccerClub/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = SoccerClub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
