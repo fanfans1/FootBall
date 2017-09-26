@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		34165ACE1F7A1E650055BC2E /* libPods-SoccerClub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34165ACF1F7A1E650055BC2E /* libPods-SoccerClub.a */; };
+		34165AE21F7A561A0055BC2E /* HttpManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 34165ADE1F7A53250055BC2E /* HttpManager.h */; };
+		34165AE31F7A561F0055BC2E /* HttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34165ADF1F7A53250055BC2E /* HttpManager.m */; };
 		3C3B45DD1C5A1B0500BA9317 /* logoPlace.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C3B45DC1C5A1B0500BA9317 /* logoPlace.jpg */; };
 		3C520F901C4FB96300AB067E /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C520F8F1C4FB96300AB067E /* SearchViewController.m */; };
 		3C520F931C5067F100AB067E /* First_0TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C520F921C5067F100AB067E /* First_0TableViewController.m */; };
@@ -122,6 +124,9 @@
 		34165ACD1F7A1E610055BC2E /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		34165ACF1F7A1E650055BC2E /* libPods-SoccerClub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-SoccerClub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34165AD11F7A1E680055BC2E /* libSDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSDWebImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		34165ADE1F7A53250055BC2E /* HttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpManager.h; sourceTree = "<group>"; };
+		34165ADF1F7A53250055BC2E /* HttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpManager.m; sourceTree = "<group>"; };
+		34165AE11F7A53580055BC2E /* DefineMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineMacro.h; sourceTree = "<group>"; };
 		3C3B45DC1C5A1B0500BA9317 /* logoPlace.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logoPlace.jpg; sourceTree = "<group>"; };
 		3C520F8E1C4FB95B00AB067E /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		3C520F8F1C4FB96300AB067E /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
@@ -317,6 +322,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34165ADC1F7A53250055BC2E /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				34165AE01F7A534A0055BC2E /* Define */,
+				34165ADD1F7A53250055BC2E /* Network */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		34165ADD1F7A53250055BC2E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				34165ADE1F7A53250055BC2E /* HttpManager.h */,
+				34165ADF1F7A53250055BC2E /* HttpManager.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		34165AE01F7A534A0055BC2E /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				34165AE11F7A53580055BC2E /* DefineMacro.h */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
 		3C520F941C50781E00AB067E /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +611,7 @@
 		3CD6FE551C435DFA00281B36 /* SoccerClub */ = {
 			isa = PBXGroup;
 			children = (
+				34165ADC1F7A53250055BC2E /* Global */,
 				3CD6FE861C435F7400281B36 /* Application */,
 				3CD6FE881C435F7400281B36 /* CodeClass  */,
 				3CD6FE8D1C435F7400281B36 /* Helper */,
@@ -965,6 +997,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34165AE31F7A561F0055BC2E /* HttpManager.m in Sources */,
+				34165AE21F7A561A0055BC2E /* HttpManager.h in Sources */,
 				AA3EEFAD1F7A45950008D992 /* MBViewController.m in Sources */,
 				3CB829D01C4920AF00DFF46E /* UIScrollView+MJExtension.m in Sources */,
 				3CB82A341C4A260800DFF46E /* Model2.m in Sources */,

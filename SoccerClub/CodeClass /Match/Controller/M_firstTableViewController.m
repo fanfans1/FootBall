@@ -26,7 +26,9 @@
 @end
 
 @implementation M_firstTableViewController
-
+{
+    NSDictionary *responseDict;
+}
 - (void)loadData{
     // 使用系统默认的刷新提示
     __block M_firstTableViewController *vc = self;
@@ -111,7 +113,17 @@
 
 - (void)jiexi{
     
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingAllowFragments error:nil];
+    NSDictionary *dic = [NSDictionary dictionary];
+    
+    if (_data) {
+         dic = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingAllowFragments error:nil];
+    }
+    
+    if (responseDict) {
+        dic = responseDict;
+    }
+    
+   
     _array = [NSMutableArray arrayWithArray:[dic objectForKey:@"games"]];
     NSDictionary *dic0 =[_array objectAtIndex:0];
     
@@ -139,36 +151,32 @@
    
     [TestNet isConnectionAvailable];
     
-    NSString *urlString = @"http://zhiboba.3b2o.com/mobileApi/programsV3/category/soccer/important/1?1452154236";
-    NSURL * url = [NSURL URLWithString:urlString];
-    _data = [NSData dataWithContentsOfURL:url];
-   
-
-    //
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-         _data = [NSData dataWithContentsOfURL:url];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (!_data) {
-                
-                _data = [CacheHelper readCacheWithName:@"M_firstTable"];
-                
-            }else{
-                
-                [CacheHelper writeCacheWithData:_data name:@"M_firstTable"];
-            }
-            [self jiexi];
-            [self.tableView reloadData];
-        });
-    });
-    
-//
+    [self firstLoadData];
     
 
     [self.tableView registerClass:[M_firstTableViewCell class] forCellReuseIdentifier:@"cell"];
   
 
 }
+
+#pragma mark -第一次加载数据
+- (void)firstLoadData{
+    NSString *urlString = @"http://zhiboba.3b2o.com/mobileApi/programsV3/category/soccer/important/1?1452154236";
+    
+    __weak typeof (self)weakSelf = self;
+    [HttpManager getUrl: urlString Parameters: nil success:^(id responseData) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([responseData isKindOfClass: [NSDictionary class]]) {
+                responseDict = responseData;
+                [weakSelf jiexi];
+                [weakSelf.tableView reloadData];
+            }
+        });
+    } failure:^(NSError *error) {
+        NSLog(@"请求发生错误");
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
