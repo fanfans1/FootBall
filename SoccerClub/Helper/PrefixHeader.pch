@@ -46,5 +46,8 @@
 
 #import "JSONKit.h"
 
-//#import "UIImageView+WebCache.h"
+#import "UIImageView+WebCache.h"
+
+
+
 #endif /* PrefixHeader_pch */

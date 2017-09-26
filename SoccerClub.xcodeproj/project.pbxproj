@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34165ACE1F7A1E650055BC2E /* libPods-SoccerClub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34165ACF1F7A1E650055BC2E /* libPods-SoccerClub.a */; };
 		3C3B45DD1C5A1B0500BA9317 /* logoPlace.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C3B45DC1C5A1B0500BA9317 /* logoPlace.jpg */; };
 		3C520F901C4FB96300AB067E /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C520F8F1C4FB96300AB067E /* SearchViewController.m */; };
 		3C520F931C5067F100AB067E /* First_0TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C520F921C5067F100AB067E /* First_0TableViewController.m */; };
@@ -113,6 +114,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0411A66B22B3FA88ABC8F2F4 /* libPods-SoccerClub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SoccerClub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DE825B4EA8473B529BCDAD5 /* libPods-SoccerClubUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SoccerClubUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34165ACD1F7A1E610055BC2E /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		34165ACF1F7A1E650055BC2E /* libPods-SoccerClub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-SoccerClub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34165AD11F7A1E680055BC2E /* libSDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSDWebImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3B45DC1C5A1B0500BA9317 /* logoPlace.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logoPlace.jpg; sourceTree = "<group>"; };
 		3C520F8E1C4FB95B00AB067E /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		3C520F8F1C4FB96300AB067E /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
@@ -271,6 +277,9 @@
 		3CE8AA8C1C44DC3300D21D40 /* CustomWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWebViewController.h; sourceTree = "<group>"; };
 		3CE8AA8D1C44DC3300D21D40 /* CustomWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomWebViewController.m; sourceTree = "<group>"; };
 		3CF4DEC41C58AD5700F8D47C /* Placegolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placegolder.png; sourceTree = "<group>"; };
+		4A47AA1C6D23278DB85AEF16 /* Pods-SoccerClub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoccerClub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoccerClub/Pods-SoccerClub.debug.xcconfig"; sourceTree = "<group>"; };
+		9212EB70B1232E68D398676F /* Pods-SoccerClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoccerClub.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoccerClub/Pods-SoccerClub.release.xcconfig"; sourceTree = "<group>"; };
+		A4BE4F8DBC638AE65AE11A84 /* libPods-SoccerClubTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SoccerClubTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +287,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34165ACE1F7A1E650055BC2E /* libPods-SoccerClub.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +553,8 @@
 				3CD6FE691C435DFA00281B36 /* SoccerClubTests */,
 				3CD6FE741C435DFA00281B36 /* SoccerClubUITests */,
 				3CD6FE541C435DFA00281B36 /* Products */,
+				50AB45906B4C994D22F36DA3 /* Pods */,
+				4322E3390DFCED3FFA01DD22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -766,6 +778,28 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		4322E3390DFCED3FFA01DD22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34165AD11F7A1E680055BC2E /* libSDWebImage.a */,
+				34165ACF1F7A1E650055BC2E /* libPods-SoccerClub.a */,
+				34165ACD1F7A1E610055BC2E /* libAFNetworking.a */,
+				0411A66B22B3FA88ABC8F2F4 /* libPods-SoccerClub.a */,
+				A4BE4F8DBC638AE65AE11A84 /* libPods-SoccerClubTests.a */,
+				1DE825B4EA8473B529BCDAD5 /* libPods-SoccerClubUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50AB45906B4C994D22F36DA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A47AA1C6D23278DB85AEF16 /* Pods-SoccerClub.debug.xcconfig */,
+				9212EB70B1232E68D398676F /* Pods-SoccerClub.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -773,9 +807,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CD6FE7A1C435DFA00281B36 /* Build configuration list for PBXNativeTarget "SoccerClub" */;
 			buildPhases = (
+				60ADFDA657D4A40FFCF6F2F9 /* [CP] Check Pods Manifest.lock */,
 				3CD6FE4F1C435DFA00281B36 /* Sources */,
 				3CD6FE501C435DFA00281B36 /* Frameworks */,
 				3CD6FE511C435DFA00281B36 /* Resources */,
+				9791D9E0855383676555E041 /* [CP] Embed Pods Frameworks */,
+				78E8F3D1E5C9568D7C10E518 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -907,6 +944,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60ADFDA657D4A40FFCF6F2F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		78E8F3D1E5C9568D7C10E518 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoccerClub/Pods-SoccerClub-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9791D9E0855383676555E041 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoccerClub/Pods-SoccerClub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3CD6FE4F1C435DFA00281B36 /* Sources */ = {
@@ -1111,6 +1196,7 @@
 		};
 		3CD6FE7B1C435DFA00281B36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A47AA1C6D23278DB85AEF16 /* Pods-SoccerClub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -1121,7 +1207,7 @@
 				INFOPLIST_FILE = SoccerClub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = SoccerClub00;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1130,6 +1216,7 @@
 		};
 		3CD6FE7C1C435DFA00281B36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9212EB70B1232E68D398676F /* Pods-SoccerClub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -1140,7 +1227,7 @@
 				INFOPLIST_FILE = SoccerClub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = SoccerClub00;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

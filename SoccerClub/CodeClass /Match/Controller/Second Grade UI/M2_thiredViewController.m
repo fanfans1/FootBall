@@ -171,11 +171,11 @@
         
     _homeInfo.text = [[programDic objectForKey:@"hostInfo"] objectForKey:@"name"];
     NSURL *homeLogeUrl = [NSURL URLWithString:[[programDic objectForKey:@"hostInfo"] objectForKey:@"logo"]];
-//    [_homeLoge sd_setImageWithURL:homeLogeUrl placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
+    [_homeLoge sd_setImageWithURL:homeLogeUrl placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
     _homeScore.text = [[programDic objectForKey:@"hostInfo"] objectForKey:@"score"];
     _guestInfo.text = [[programDic objectForKey:@"guestInfo"] objectForKey:@"name"];
     NSURL *guestLogeUrl = [NSURL URLWithString:[[programDic objectForKey:@"guestInfo"] objectForKey:@"logo"]];
-//    [_guestLoge sd_setImageWithURL:guestLogeUrl placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
+    [_guestLoge sd_setImageWithURL:guestLogeUrl placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
     _guestScore.text = [[programDic objectForKey:@"guestInfo"] objectForKey:@"score"];
     _matchTime.text = [[_dic objectForKey:@"program"]  objectForKey:@"detailtime"];
     _leagueDesc.text =[[_dic objectForKey:@"program"]  objectForKey:@"leagueName"];

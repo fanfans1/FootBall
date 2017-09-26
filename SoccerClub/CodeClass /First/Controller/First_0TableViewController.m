@@ -210,12 +210,12 @@
             [view1 addSubview:xianView];
             // 主场 标志
             UIImageView *zhuImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, (CGRectGetHeight(view1.frame)/7*3)+1, 15, 15)];
-//            [zhuImageView sd_setImageWithURL:[NSURL URLWithString:[model2.guestInfo valueForKey:@"logo"]]placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
+            [zhuImageView sd_setImageWithURL:[NSURL URLWithString:[model2.guestInfo valueForKey:@"logo"]]placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
             
             [view1 addSubview:zhuImageView];
             // 客场 标志
             UIImageView *keImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, (CGRectGetHeight(view1.frame)/7*5)+1, 15, 15)];
-//            [keImageView sd_setImageWithURL:[NSURL URLWithString:[model2.homeInfo valueForKey:@"logo"]]placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
+            [keImageView sd_setImageWithURL:[NSURL URLWithString:[model2.homeInfo valueForKey:@"logo"]]placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
             [view1 addSubview:keImageView];
             // 主 队名
             UILabel *zhumLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, (CGRectGetHeight(view1.frame)/7*2)+4, 100, 30)];
@@ -259,7 +259,7 @@
             imageView.tag = 1000+i;
             
                 NSURL *url = [NSURL URLWithString:model1.thumb];
-//                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
             
 
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetHeight(_scrollView.frame)-30, CGRectGetWidth(self.view.frame)-70, 30)];

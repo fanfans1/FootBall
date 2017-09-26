@@ -151,7 +151,7 @@
     
     
     
-//    [cell.imagi sd_setImageWithURL:[NSURL URLWithString:[[_mutableArr objectAtIndex:indexPath.row] objectForKey:@"firstImg"]]];
+    [cell.imagi sd_setImageWithURL:[NSURL URLWithString:[[_mutableArr objectAtIndex:indexPath.row] objectForKey:@"firstImg"]]];
     cell.labell.text = [[_mutableArr objectAtIndex:indexPath.row] objectForKey:@"bname"];
  
     return cell;

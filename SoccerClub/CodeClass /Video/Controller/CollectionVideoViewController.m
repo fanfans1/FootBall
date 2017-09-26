@@ -110,7 +110,7 @@
         cell.nameLabel.font = [UIFont systemFontOfSize:15];
         NSDictionary *imageInfodic = [dic objectForKey:@"imgInfo"];
         NSString *imageUrlStr = [NSString stringWithFormat:@"http://in.3b2o.com/img/show/sid/%@/w//h//t/1/show.jpg",[imageInfodic objectForKey:@"sid"]];
-//        [cell.videoImageView sd_setImageWithURL:[NSURL URLWithString:imageUrlStr]placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+        [cell.videoImageView sd_setImageWithURL:[NSURL URLWithString:imageUrlStr]placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
         
         
         return cell;

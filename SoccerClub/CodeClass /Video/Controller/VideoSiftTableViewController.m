@@ -148,7 +148,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     VideoSiftTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL" forIndexPath:indexPath];
     NSDictionary *videoDetailDic = [self.allVideoArr objectAtIndex:indexPath.row];
-//    [cell.videoImageView sd_setImageWithURL:[NSURL URLWithString:[videoDetailDic objectForKey:@"imgUrl"]]placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+    [cell.videoImageView sd_setImageWithURL:[NSURL URLWithString:[videoDetailDic objectForKey:@"imgUrl"]]placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
     cell.videoLengthLabel.text = [videoDetailDic objectForKey:@"blength"];
     cell.videoNameLabel.text = [videoDetailDic objectForKey:@"bname"];
     cell.timeLabel.text = [videoDetailDic objectForKey:@"modtime"];
