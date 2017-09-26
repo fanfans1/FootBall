@@ -1,14 +1,18 @@
 //
-//  KongViewController.m
-//  SoccerClub
+//  WebServerViewController.m
+//  Foods
 //
-//  Created by xalo on 16/1/14.
-//  Copyright © 2016年 程龙. All rights reserved.
+//  Created by yy on 2017/1/4.
+//  Copyright © 2017年 fanfan. All rights reserved.
 //
 
 #import "WebServerViewController.h"
+#import "MBRefresh.h"
 
-@interface WebServerViewController ()<UIWebViewDelegate>
+
+@interface WebServerViewController ()
+
+@property (nonatomic, strong)MBRefresh *mb;
 
 @end
 
@@ -16,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    WKWebView* webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
     
     self.title = @"资讯";
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -43,6 +49,7 @@
     
     
     
+    // Do any additional setup after loading the view.
 }
 
 
@@ -62,18 +69,6 @@
      [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('topnews_block')[0].style.display = 'none'"]; // MAC广告
      [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('topnews_block')[1].style.display = 'none'"]; // MAC广告
     
-    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('topnews_block')[2].style.display = 'none'"];
-    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('topnews_block')[3].style.display = 'none'"];
-    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('topnews_block')[4].style.display = 'none'"];
-    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('foot_execute_leader area')[0].style.display = 'none'"];
-    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('h70')[0].style.display = 'none'"];
-    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('footerbg')[0].style.display = 'none'"];
-    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('banner')[0].style.display = 'none'"];
-    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('N-nav-bottom')[0].style.display = 'none'"];
-    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('area bottomad channel_relative_2016')[0].style.display = 'none'"];
-    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('bottomnews_focus')[0].style.display = 'none'"];
-//    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('banner')[0].style.display = 'none'"];
-//    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('zbb_path').style.display = 'none'"];
 }
 
 
@@ -81,8 +76,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 /*
  #pragma mark - Navigation
@@ -95,4 +88,3 @@
  */
 
 @end
-

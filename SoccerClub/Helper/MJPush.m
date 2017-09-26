@@ -8,8 +8,7 @@
 
 #import "MJPush.h"
 #import "AFHTTPSessionManager.h"
-#import "MBViewController.h"
-#import "MBProgressHUD.h"
+#import "MBRefresh.h"
 
 
 @implementation MJPush
@@ -20,11 +19,11 @@
                  success:(void (^)(NSDictionary * dictionary))success
                  failure:(void (^)(NSError * error))failure {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer.timeoutInterval = 20;
+    manager.requestSerializer.timeoutInterval = 10;
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/plain", @"text/html", nil];
     
- 
-    MBViewController *mb = [[MBViewController alloc] initWith];
+    
+    MBRefresh *mb = [[MBRefresh alloc] initWith];
     
     [manager GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (responseObject) {
@@ -38,7 +37,7 @@
         if (error) {
             failure(error);
             [mb remove];
-//            ALERT(@"网络有误");
+            ALERT(@"网络有误");
             
         }
     }];
@@ -51,10 +50,10 @@
                   failure:(void (^)(NSError *error))failure {
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer.timeoutInterval = 20;
+    manager.requestSerializer.timeoutInterval = 10;
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/plain", @"text/html", nil];
     
-    MBViewController *mb = [[MBViewController alloc] initWith];
+    MBRefresh *mb = [[MBRefresh alloc] initWith];
     [manager POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             //            [LZBLoadingView dismissLoadingView];
@@ -67,7 +66,7 @@
             failure(error);
             //            [LZBLoadingView dismissLoadingView];
             [mb remove];
-//           ALERT(@"网络有误");
+            ALERT(@"网络有误");
             NSLog(@"%@",error);
             
         }
@@ -84,11 +83,11 @@
                     success:(void (^)(id sucess))success
                     failure:(void (^)(NSError *))failure {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer.timeoutInterval = 20;
+    manager.requestSerializer.timeoutInterval = 10;
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/plain", @"text/html", nil];
     
     
-    MBViewController *mb = [[MBViewController alloc] initWith];
+    MBRefresh *mb = [[MBRefresh alloc] initWith];
     // 加上这行代码，https ssl 验证。
     
     NSDate *currentDate = [NSDate date];//获取当前时间，日期
@@ -116,7 +115,7 @@
         if (failure) {
             [mb remove];
             failure(error);
-//           ALERT(@"网络有误");
+            ALERT(@"网络有误");
             
         }
     }];
@@ -130,12 +129,12 @@
                              success:(void (^)( id sucess))success
                              failure:(void (^)(NSError *))failure{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer.timeoutInterval = 20;
+    manager.requestSerializer.timeoutInterval = 10;
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/plain", @"text/html", nil];
     
     
     
-    MBViewController *mb = [[MBViewController alloc] initWith];
+    MBRefresh *mb = [[MBRefresh alloc] initWith];
     
     // 注意转化图片时候把图片压缩
     NSDate *currentDate = [NSDate date];//获取当前时间，日期
@@ -159,7 +158,7 @@
         if (failure) {
             [mb remove];
             failure(error);
-//           ALERT(@"网络有误");
+            ALERT(@"网络有误");
         }
     }];
 }
@@ -170,3 +169,4 @@
 
 
 @end
+

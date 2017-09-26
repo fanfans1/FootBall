@@ -100,6 +100,14 @@
 		AA3EEFAD1F7A45950008D992 /* MBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFAB1F7A45950008D992 /* MBViewController.m */; };
 		AA3EEFB01F7A45B00008D992 /* MJPush.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFAF1F7A45B00008D992 /* MJPush.m */; };
 		AA3EEFB11F7A4E570008D992 /* WebServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFA91F7A458A0008D992 /* WebServerViewController.m */; };
+		AA3EEFC71F7A61A70008D992 /* MMZCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFBF1F7A60380008D992 /* MMZCViewController.m */; };
+		AA3EEFC81F7A61A70008D992 /* MMZCHMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFC11F7A60390008D992 /* MMZCHMViewController.m */; };
+		AA3EEFC91F7A61A70008D992 /* settingPassWardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFBD1F7A60380008D992 /* settingPassWardViewController.m */; };
+		AA3EEFCA1F7A62C60008D992 /* ic_landing_nickname.png in Resources */ = {isa = PBXBuildFile; fileRef = AA3EEFC51F7A60C00008D992 /* ic_landing_nickname.png */; };
+		AA3EEFCB1F7A62C60008D992 /* bg4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA3EEFC31F7A60960008D992 /* bg4.jpg */; };
+		AA3EEFCC1F7A62C60008D992 /* goback_back_orange_on.png in Resources */ = {isa = PBXBuildFile; fileRef = AA3EEFC41F7A609D0008D992 /* goback_back_orange_on.png */; };
+		AA3EEFCD1F7A62C60008D992 /* mm_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AA3EEFC61F7A60D10008D992 /* mm_normal.png */; };
+		AA3EEFD01F7A65650008D992 /* MBRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFCF1F7A65140008D992 /* MBRefresh.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,6 +303,18 @@
 		AA3EEFAC1F7A45950008D992 /* MBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBViewController.h; sourceTree = "<group>"; };
 		AA3EEFAE1F7A45B00008D992 /* MJPush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJPush.h; sourceTree = "<group>"; };
 		AA3EEFAF1F7A45B00008D992 /* MJPush.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJPush.m; sourceTree = "<group>"; };
+		AA3EEFBD1F7A60380008D992 /* settingPassWardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = settingPassWardViewController.m; sourceTree = "<group>"; };
+		AA3EEFBE1F7A60380008D992 /* MMZCHMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMZCHMViewController.h; sourceTree = "<group>"; };
+		AA3EEFBF1F7A60380008D992 /* MMZCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMZCViewController.m; sourceTree = "<group>"; };
+		AA3EEFC01F7A60390008D992 /* MMZCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMZCViewController.h; sourceTree = "<group>"; };
+		AA3EEFC11F7A60390008D992 /* MMZCHMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMZCHMViewController.m; sourceTree = "<group>"; };
+		AA3EEFC21F7A60390008D992 /* settingPassWardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = settingPassWardViewController.h; sourceTree = "<group>"; };
+		AA3EEFC31F7A60960008D992 /* bg4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg4.jpg; sourceTree = "<group>"; };
+		AA3EEFC41F7A609D0008D992 /* goback_back_orange_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goback_back_orange_on.png; sourceTree = "<group>"; };
+		AA3EEFC51F7A60C00008D992 /* ic_landing_nickname.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_landing_nickname.png; sourceTree = "<group>"; };
+		AA3EEFC61F7A60D10008D992 /* mm_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mm_normal.png; sourceTree = "<group>"; };
+		AA3EEFCE1F7A65140008D992 /* MBRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBRefresh.h; sourceTree = "<group>"; };
+		AA3EEFCF1F7A65140008D992 /* MBRefresh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBRefresh.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -664,6 +684,7 @@
 		3CD6FE881C435F7400281B36 /* CodeClass  */ = {
 			isa = PBXGroup;
 			children = (
+				AA3EEFB21F7A5E260008D992 /* Login */,
 				3CD6FEF91C43F8FF00281B36 /* Commen */,
 				3CD6FEFF1C43F90000281B36 /* First */,
 				3CA783131C4F2C5000829815 /* Match */,
@@ -679,6 +700,8 @@
 				AA3EEFAF1F7A45B00008D992 /* MJPush.m */,
 				AA3EEFAC1F7A45950008D992 /* MBViewController.h */,
 				AA3EEFAB1F7A45950008D992 /* MBViewController.m */,
+				AA3EEFCE1F7A65140008D992 /* MBRefresh.h */,
+				AA3EEFCF1F7A65140008D992 /* MBRefresh.m */,
 				AA3EEFA81F7A458A0008D992 /* WebServerViewController.h */,
 				AA3EEFA91F7A458A0008D992 /* WebServerViewController.m */,
 				3CD6FE941C437EA900281B36 /* PrefixHeader.pch */,
@@ -800,6 +823,47 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AA3EEFB21F7A5E260008D992 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AA3EEFB31F7A5E260008D992 /* C */,
+				AA3EEFB91F7A5E260008D992 /* M */,
+				AA3EEFBC1F7A5E260008D992 /* V */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AA3EEFB31F7A5E260008D992 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				AA3EEFC51F7A60C00008D992 /* ic_landing_nickname.png */,
+				AA3EEFC31F7A60960008D992 /* bg4.jpg */,
+				AA3EEFC41F7A609D0008D992 /* goback_back_orange_on.png */,
+				AA3EEFC61F7A60D10008D992 /* mm_normal.png */,
+				AA3EEFC01F7A60390008D992 /* MMZCViewController.h */,
+				AA3EEFBF1F7A60380008D992 /* MMZCViewController.m */,
+				AA3EEFBE1F7A60380008D992 /* MMZCHMViewController.h */,
+				AA3EEFC11F7A60390008D992 /* MMZCHMViewController.m */,
+				AA3EEFC21F7A60390008D992 /* settingPassWardViewController.h */,
+				AA3EEFBD1F7A60380008D992 /* settingPassWardViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		AA3EEFB91F7A5E260008D992 /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		AA3EEFBC1F7A5E260008D992 /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -907,6 +971,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3EEFCA1F7A62C60008D992 /* ic_landing_nickname.png in Resources */,
+				AA3EEFCB1F7A62C60008D992 /* bg4.jpg in Resources */,
+				AA3EEFCC1F7A62C60008D992 /* goback_back_orange_on.png in Resources */,
+				AA3EEFCD1F7A62C60008D992 /* mm_normal.png in Resources */,
 				3CB82A231C4A260800DFF46E /* First_1TableViewCell.xib in Resources */,
 				3CB829CB1C4920AF00DFF46E /* MJRefresh.bundle in Resources */,
 				3CB82A3A1C4A260800DFF46E /* First_4TableViewCell.xib in Resources */,
@@ -998,6 +1066,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3EEFD01F7A65650008D992 /* MBRefresh.m in Sources */,
+				AA3EEFC71F7A61A70008D992 /* MMZCViewController.m in Sources */,
+				AA3EEFC81F7A61A70008D992 /* MMZCHMViewController.m in Sources */,
+				AA3EEFC91F7A61A70008D992 /* settingPassWardViewController.m in Sources */,
 				34165AE31F7A561F0055BC2E /* HttpManager.m in Sources */,
 				34165AE21F7A561A0055BC2E /* HttpManager.h in Sources */,
 				AA3EEFAD1F7A45950008D992 /* MBViewController.m in Sources */,

@@ -11,7 +11,7 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-
+#import "AppDelegate.h"
 #import "FirstRootViewController.h"
 #import "MatchRootViewController.h"
 #import "VideoRootViewController.h"
@@ -19,6 +19,7 @@
 
 //  杰哥单独导入
 #import "DefineMacro.h"
+#import "MMZCViewController.h"  //登录
 
 
 
@@ -38,7 +39,7 @@
 
 
 // 提示框
-#define ALERT(sender)    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:sender preferredStyle:UIAlertControllerStyleAlert];[APPDELEGATE.window.rootViewController presentViewController:alertC animated:YES completion:^{dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{[alertC dismissViewControllerAnimated:YES completion:nil];});}];
+#define ALERT(sender) UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:sender preferredStyle:UIAlertControllerStyleAlert];[APPDELEGATE.window.rootViewController presentViewController:alertC animated:YES completion:^{dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{[alertC dismissViewControllerAnimated:YES completion:nil];});}];
 
 
 
