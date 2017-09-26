@@ -225,7 +225,11 @@
 
 //  分区头的高度
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    
+    NSDictionary *dic = [_array objectAtIndex:section];
+    NSString *string = [dic objectForKey:@"date"];
+    if (!string) {
+        return 0;
+    }
     return 20;
 }
 
@@ -234,11 +238,17 @@
     
     NSDictionary *dic = [_array objectAtIndex:section];
     NSString *string = [dic objectForKey:@"date"];
+    if (!string) {
+        UIView *v = [[UIView alloc] init];
+        return v;
+    }
+    
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), 20)];
-    view.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0.7];
+    view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
     UILabel *label = [[UILabel alloc] initWithFrame:view.frame];
     label.text = string;
-    label.textColor = [UIColor whiteColor];
+    label.textColor = [UIColor grayColor];
     label.font = [UIFont systemFontOfSize:13];
     label.textAlignment = NSTextAlignmentCenter;
     [view addSubview:label];
@@ -253,12 +263,7 @@
     
         NSDictionary *dic = [_array objectAtIndex:indexPath.section];
         NSMutableArray *array = [dic objectForKey:@"games"];
-//        _removeArr = [NSMutableArray arrayWithArray:array];
-//        for (int i = 0; i < _removeArr.count; i++) {
-//            if ([[_removeArr[i] objectForKey:@"id"] isEqualToString:@"40543"]) {
-//                [_removeArr removeObject:_removeArr[i]];
-//            }
-//        }
+
     NSDictionary *dic1 = [array objectAtIndex:indexPath.row];
     NSString *sid = [dic1 objectForKey:@"sid"];
     NSString *time = [dic1 objectForKey:@"time"];
@@ -268,9 +273,8 @@
     M2_first.homeInfoDic = homeInfoDic;
     M2_first.sid = sid;
     M2_first.time = time;
-//    [self presentViewController:M2_first animated:YES completion:^{
-//        
-//    }];
+        
+    M2_first.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:M2_first animated:YES];
 
     }

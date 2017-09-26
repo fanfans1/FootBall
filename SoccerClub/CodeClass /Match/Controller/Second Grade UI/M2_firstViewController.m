@@ -96,15 +96,6 @@
     [self addChildViewController:navC];
 
     
-//    for (int i = 0; i < _Nav.count; i++) {
-//        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)*i, 240, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-150) ];
-//        
-//        tableView.delegate = self;
-//        tableView.dataSource = self;
-//        tableView.tag = 1000+i;
-
-//    }
-    
     NSMutableArray *array = [_dic objectForKey:@"newNavV4"];
     _Nav = [NSMutableArray arrayWithArray:array];
     for (int i = 0; i < _Nav.count; i++) {
@@ -249,14 +240,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

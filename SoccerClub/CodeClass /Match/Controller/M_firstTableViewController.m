@@ -142,17 +142,9 @@
     NSString *urlString = @"http://zhiboba.3b2o.com/mobileApi/programsV3/category/soccer/important/1?1452154236";
     NSURL * url = [NSURL URLWithString:urlString];
     _data = [NSData dataWithContentsOfURL:url];
-//    [self jiexi];
-    
-   //    for (int i = 0; i < _removeArr.count; i++) {
-//        if ([[_removeArr[i] objectForKey:@"id"] isEqualToString:@"40543"]) {
-//            [_removeArr removeObject:_removeArr[i]];
-//        }
-//    }
-    
-    
-    
-//    _data = [NSData dataWithContentsOfURL:url];
+   
+
+    //
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
          _data = [NSData dataWithContentsOfURL:url];
         
@@ -172,23 +164,10 @@
     
 //
     
-    
-//    for (NSDictionary *dic in array) {
-//        [self.dateArray addObject:[dic objectForKey:@"date"]];
-//        [self.gameArray addObject:[dic objectForKey:@"games"]];
-//        self.allDic setValue:self.gameArray forKey:@"ga"
-//    }
-    
-//    firstTableViewController * first = [[firstTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    
-    
-    
-    
-    
+
     [self.tableView registerClass:[M_firstTableViewCell class] forCellReuseIdentifier:@"cell"];
   
-    
-  
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -258,26 +237,32 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    
+    NSDictionary *dic = [_array objectAtIndex:section];
+    NSString *string = [dic objectForKey:@"date"];
+    if (!string) {
+        return 0;
+    }
+
     return 20;
-    
 }
 
 
-//  返回分区头
-//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-//    
-//}
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     NSDictionary *dic = [_array objectAtIndex:section];
     NSString *string = [dic objectForKey:@"date"];
+    if (!string) {
+        UIView *v = [[UIView alloc] init];
+        return v;
+    }
+    
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), 20)];
-    view.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0.7];
-//    view.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:255/255.0 alpha:0.5];
+    view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
+    //
     UILabel *label = [[UILabel alloc] initWithFrame:view.frame];
     label.text = string;
-    label.textColor = [UIColor whiteColor];
+    label.textColor = [UIColor grayColor];
     label.font = [UIFont systemFontOfSize:13];
     label.textAlignment = NSTextAlignmentCenter;
     [view addSubview:label];
@@ -289,75 +274,32 @@
 //  单元格的点击事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
+    
     if ([TestNet isConnectionAvailable]) {
         NSDictionary *dic =[_array objectAtIndex:indexPath.section];
         
         NSMutableArray *array = [dic objectForKey:@"games"];
         
-        //  去除每日福利
-//        _removeArr = [NSMutableArray arrayWithArray:array];
-//        for (int i = 0; i < _removeArr.count; i++) {
-//            if ([[_removeArr[i] objectForKey:@"id"] isEqualToString:@"40543"]) {
-//                [_removeArr removeObject:_removeArr[i]];
-//            }
-//        }
+
   
     NSDictionary *dic1 = [array objectAtIndex:indexPath.row];
     NSString *sid = [dic1 objectForKey:@"sid"];
     NSString *time = [dic1 objectForKey:@"time"];
     NSMutableDictionary *homeInfoDic = [dic1 objectForKey:@"homeInfo"];
+    
+        
     M2_firstViewController *M2_first = [[M2_firstViewController alloc] init];
     M2_first.match = [dic1 objectForKey:@"timeName"];
     M2_first.homeInfoDic = homeInfoDic;
     M2_first.sid = sid;
     M2_first.time = time;
-//    [self presentViewController:M2_first animated:YES completion:^{
-//    }];
+
+        
+        M2_first.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:M2_first animated:YES];
     }
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

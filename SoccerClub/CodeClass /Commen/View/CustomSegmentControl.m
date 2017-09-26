@@ -57,7 +57,7 @@
         [self addSubview:_itemBtn];
     }
     _bottomView = [[UIView alloc]initWithFrame:CGRectMake(10, 25, itemWidth, 5)];
-    _bottomView.backgroundColor = [UIColor blueColor];
+    _bottomView.backgroundColor = [UIColor cyanColor];
     [self addSubview:_bottomView];
 //    NSLog(@"%@",self.subviews);
 }
@@ -83,7 +83,8 @@
 //        NSLog(@"%f",_itemBtn.bounds.size.width);
 //        NSLog(@"%d",abs((btn.frame.origin.x)/_itemBtn.bounds.size.width));
         if (abs((btn.frame.origin.x)/_itemBtn.bounds.size.width) == index) {
-            btn.tintColor = [UIColor blueColor];
+//            改变
+            btn.tintColor = [UIColor cyanColor];
         }else{
             btn.tintColor = [UIColor grayColor];
         }

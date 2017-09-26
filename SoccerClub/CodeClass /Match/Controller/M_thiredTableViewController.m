@@ -184,20 +184,7 @@
         
         return cell;
     }
-//    }else if ([[dic1 objectForKey:@"guestInfo"]isKindOfClass:[NSArray class]]) {
-//        M_thiredTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL" forIndexPath:indexPath];
-//        cell.backImage.image = [UIImage imageNamed:@"Match_backImage.png"];
-//        cell.soccerName.text = [dic1 objectForKey:@"name"];
-//        cell.soccerLeagueName.text = [dic1 objectForKey:@"leagueDesc"];
-//        cell.source.text = [dic1 objectForKey:@"source"];
-//        return cell;
-//        
-//    }else{
-//         M_thiredTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-//        return cell;
-//    }
-//        
-    
+
     
     
     
@@ -213,20 +200,29 @@
 
 //  返回分区头高度
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    NSDictionary *dic = [_array objectAtIndex:section];
+    NSString *string = [dic objectForKey:@"date"];
+    if (!string) {
+        return 0;
+    }
     return 20;
 }
 
 //  自定义头分区的风格
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     NSDictionary *dic = [_array objectAtIndex:section];
-    NSString *string = [dic objectForKey:@"date"] ;
+    NSString *string = [dic objectForKey:@"date"];
+    if (!string) {
+        UIView *v = [[UIView alloc] init];
+        return v;
+    }
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0,CGRectGetWidth([UIScreen mainScreen].bounds), 20)];
-    view.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0.7];
+    view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
     UILabel *lable = [[UILabel alloc] initWithFrame:view.frame];
     lable.textAlignment = NSTextAlignmentCenter;
     lable.font = [UIFont systemFontOfSize:13];
-    lable.textColor = [UIColor whiteColor];
+    lable.textColor = [UIColor grayColor];
     lable.text = string;
     
     [view addSubview:lable];
@@ -247,7 +243,7 @@
     
     M2_thiredViewController *M2_thired = [[M2_thiredViewController alloc] init];
     M2_thired.sid = sid;
-//    M2_thired.time = time;
+        
     [self presentViewController:M2_thired animated:YES completion:^{
         
     }];
@@ -255,48 +251,5 @@
 //    [self.navigationController pushViewController:M2_thired animated:YES];
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
