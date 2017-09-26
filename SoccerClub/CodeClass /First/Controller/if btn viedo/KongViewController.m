@@ -8,53 +8,42 @@
 
 #import "KongViewController.h"
 
+#import "MBRefresh.h"
 @interface KongViewController ()<UIWebViewDelegate>
 
+@property (nonatomic, strong)MBRefresh *mb;
 @end
 
 @implementation KongViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIButton *Btn = [UIButton buttonWithType:UIButtonTypeSystem];
-    Btn.frame = CGRectMake(5, 22, 60, 40);
-    [Btn setTitle:@"返回" forState:UIControlStateNormal];
-    [Btn addTarget:self action:@selector(leftBtnItem) forControlEvents:UIControlEventTouchUpInside];
-    Btn.titleLabel.font = [UIFont systemFontOfSize:20];
-//    [self.view addSubview:Btn];
-    
-    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 64)];
-    headerView.backgroundColor = BACKGROUNDCOLOR;
-    [headerView addSubview:Btn];
-    [self.view addSubview:headerView];
-    //     拼接
-    //    NSString *string = [NSString stringWithFormat:@"http://www.zhiboba.com/article/show/%@",self.str];
-    
-    //    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
-    //    [tapGR setNumberOfTapsRequired:2];
-    //    [tapGR setNumberOfTouchesRequired:1];
-    //    self.view.userInteractionEnabled = YES;
-    //    [self.view addGestureRecognizer:tapGR];
-    
-    
-    
+    if (!self.navigationController) {
+        
+        UIButton *Btn = [UIButton buttonWithType:UIButtonTypeSystem];
+        Btn.frame = CGRectMake(5, 22, 60, 40);
+        [Btn setTitle:@"返回" forState:UIControlStateNormal];
+        [Btn addTarget:self action:@selector(leftBtnItem) forControlEvents:UIControlEventTouchUpInside];
+        Btn.titleLabel.font = [UIFont systemFontOfSize:20];
+        //    [self.view addSubview:Btn];
+        
+        UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 64)];
+        headerView.backgroundColor = BACKGROUNDCOLOR;
+        [headerView addSubview:Btn];
+        [self.view addSubview:headerView];
+    }else{
+        self.mb = [[MBRefresh alloc] initWith];
+    }
     // 使用web承接HTML
     UIWebView *webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-64)];
     // 将请求放入子线程中
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
-        NSURL *url = [NSURL URLWithString:self.str];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        [webView loadRequest:request];
-        
+    NSURL *url = [NSURL URLWithString:self.str];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [webView loadRequest:request];
+    webView.delegate = self;
+    webView.scrollView.bouncesZoom = NO;
+    [self.view addSubview:webView];
         // 回主线程
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            webView.delegate = self;
-            [self.view addSubview:webView];
-        });
-    });
     
 }
 
@@ -62,8 +51,25 @@
 //    []
 //}
 
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+     [self.mb remove];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    if (self.navigationController) {
+        self.tabBarController.tabBar.hidden = YES;
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    if (self.navigationController) {
+        self.tabBarController.tabBar.hidden = NO;
+    }
+}
+
 // 去除广告  
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
+    [self.mb remove];
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('header').style.display = 'none'"];
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('banner').style.display = 'none'"]; // MAC广告
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('index_view_navigator').style.display = 'none'"];
@@ -93,6 +99,7 @@
     UIScreenEdgePanGestureRecognizer *screenEdgePan = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(leftBtnItem)];
     screenEdgePan.edges = UIRectEdgeLeft;
     [self.view addGestureRecognizer:screenEdgePan];
+     [self.mb remove];
 }
 
 /*

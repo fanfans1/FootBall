@@ -85,13 +85,7 @@
     _first_4TableViewController.view.frame = CGRectMake(CGRectGetWidth(self.view.frame)*3, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-94-49);
     [self addChildViewController:_first_4TableViewController];
     [_myScrollView addSubview:_first_4TableViewController.view];
-//    // 数据页面
-//    _first_5TableViewController = [[First_5TableViewController alloc] init];
-//    _first_5TableViewController.view.frame = CGRectMake(CGRectGetWidth(self.view.frame)*5, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-94-49);
-//    [self addChildViewController:_first_5TableViewController];
-//    [_myScrollView addSubview:_first_5TableViewController.view];
-    
-    
+ 
     // 接受通知
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notice:) name:@"btnAction" object:nil];
     
