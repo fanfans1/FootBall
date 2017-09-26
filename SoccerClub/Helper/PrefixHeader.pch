@@ -17,6 +17,10 @@
 #import "VideoRootViewController.h"
 #import "tabBarController.h"
 
+//  杰哥单独导入
+#import "DefineMacro.h"
+
+
 
 
 #define COLOUR(R,G,B) [UIColor colorWithRed:R / 255.0 green:G / 255.0 blue:B / 255.0 alpha:1]
