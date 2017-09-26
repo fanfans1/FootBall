@@ -22,9 +22,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    
-    
-    // Do any additional setup after loading the view.
     WKWebView* webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
     self.webView = webView;
     self.webView.navigationDelegate = self;
@@ -36,23 +33,10 @@
     
     [self setWashWeb];
     [self.view addSubview:webView];
-    
-    
-    //  网页适配高度
-    CGSize contentSize = webView.scrollView.contentSize;
-    CGSize viewSize = self.view.bounds.size;
-    
-    float rw = viewSize.width / contentSize.width;
-    
-    webView.scrollView.minimumZoomScale = rw;
-    webView.scrollView.maximumZoomScale = rw;
-    webView.scrollView.zoomScale = rw;
-    
-    webView.delegate = self;
-    [self.view addSubview:webView];
-    
-
+    [_webView setAllowsBackForwardNavigationGestures:true];
+    // Do any additional setup after loading the view.
 }
+
 
 
 - (void)setWashWeb{
