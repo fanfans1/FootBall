@@ -94,6 +94,9 @@
 		3CE8AA7F1C448A9D00D21D40 /* tabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE8AA7D1C448A9D00D21D40 /* tabBarController.m */; };
 		3CE8AA8E1C44DC3300D21D40 /* CustomWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE8AA8D1C44DC3300D21D40 /* CustomWebViewController.m */; };
 		3CF4DEC51C58AD5700F8D47C /* Placegolder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF4DEC41C58AD5700F8D47C /* Placegolder.png */; };
+		AA3EEFAA1F7A458A0008D992 /* WebServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFA91F7A458A0008D992 /* WebServerViewController.m */; };
+		AA3EEFAD1F7A45950008D992 /* MBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFAB1F7A45950008D992 /* MBViewController.m */; };
+		AA3EEFB01F7A45B00008D992 /* MJPush.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFAF1F7A45B00008D992 /* MJPush.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -280,6 +283,12 @@
 		4A47AA1C6D23278DB85AEF16 /* Pods-SoccerClub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoccerClub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoccerClub/Pods-SoccerClub.debug.xcconfig"; sourceTree = "<group>"; };
 		9212EB70B1232E68D398676F /* Pods-SoccerClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoccerClub.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoccerClub/Pods-SoccerClub.release.xcconfig"; sourceTree = "<group>"; };
 		A4BE4F8DBC638AE65AE11A84 /* libPods-SoccerClubTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SoccerClubTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA3EEFA81F7A458A0008D992 /* WebServerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebServerViewController.h; sourceTree = "<group>"; };
+		AA3EEFA91F7A458A0008D992 /* WebServerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebServerViewController.m; sourceTree = "<group>"; };
+		AA3EEFAB1F7A45950008D992 /* MBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBViewController.m; sourceTree = "<group>"; };
+		AA3EEFAC1F7A45950008D992 /* MBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBViewController.h; sourceTree = "<group>"; };
+		AA3EEFAE1F7A45B00008D992 /* MJPush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJPush.h; sourceTree = "<group>"; };
+		AA3EEFAF1F7A45B00008D992 /* MJPush.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJPush.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -674,6 +683,12 @@
 		3CD6FE8D1C435F7400281B36 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				AA3EEFAE1F7A45B00008D992 /* MJPush.h */,
+				AA3EEFAF1F7A45B00008D992 /* MJPush.m */,
+				AA3EEFAC1F7A45950008D992 /* MBViewController.h */,
+				AA3EEFAB1F7A45950008D992 /* MBViewController.m */,
+				AA3EEFA81F7A458A0008D992 /* WebServerViewController.h */,
+				AA3EEFA91F7A458A0008D992 /* WebServerViewController.m */,
 				3CD6FE941C437EA900281B36 /* PrefixHeader.pch */,
 				3CA782AD1C4E15FE00829815 /* CacheHelper.h */,
 				3CA782AE1C4E160C00829815 /* CacheHelper.m */,
@@ -998,6 +1013,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3EEFAD1F7A45950008D992 /* MBViewController.m in Sources */,
 				3CB829D01C4920AF00DFF46E /* UIScrollView+MJExtension.m in Sources */,
 				3CB82A341C4A260800DFF46E /* Model2.m in Sources */,
 				3CE8AA8E1C44DC3300D21D40 /* CustomWebViewController.m in Sources */,
@@ -1027,11 +1043,13 @@
 				3CA783381C4F2C5000829815 /* M2_thiredViewController.m in Sources */,
 				3CA783341C4F2C5000829815 /* M_thiredTableViewController.m in Sources */,
 				3CA7830D1C4F2C0600829815 /* CollectionVideoTableViewCell.m in Sources */,
+				AA3EEFB01F7A45B00008D992 /* MJPush.m in Sources */,
 				3CB82A3F1C4A260800DFF46E /* Model.m in Sources */,
 				3CA783361C4F2C5000829815 /* M2_firstViewController.m in Sources */,
 				3CB82A2D1C4A260800DFF46E /* KongViewController.m in Sources */,
 				3CA7833A1C4F2C5000829815 /* M_fourthTableViewCell.m in Sources */,
 				3CA782AF1C4E160C00829815 /* CacheHelper.m in Sources */,
+				AA3EEFAA1F7A458A0008D992 /* WebServerViewController.m in Sources */,
 				3CA783371C4F2C5000829815 /* M2_fourthViewController.m in Sources */,
 				3CA783331C4F2C5000829815 /* M_secondTableViewController.m in Sources */,
 				3CB829D21C4920AF00DFF46E /* UIView+MJExtension.m in Sources */,
