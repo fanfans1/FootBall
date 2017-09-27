@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSU-TD-m0v">
-                    <rect key="frame" x="0.0" y="31" width="375" height="80"/>
+                    <rect key="frame" x="0.0" y="95" width="375" height="80"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pmg-J7-f5a">
                             <rect key="frame" x="20" y="10" width="60" height="60"/>
@@ -54,7 +54,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1t6-H1-hde">
-                    <rect key="frame" x="0.0" y="111" width="375" height="508"/>
+                    <rect key="frame" x="0.0" y="175" width="375" height="444"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
@@ -62,7 +62,7 @@
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="MSU-TD-m0v" secondAttribute="trailing" id="6P2-Gp-K4V"/>
                 <constraint firstItem="1t6-H1-hde" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="KfL-C5-znn"/>
-                <constraint firstItem="MSU-TD-m0v" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="11" id="P1t-oW-eR5"/>
+                <constraint firstItem="MSU-TD-m0v" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="75" id="P1t-oW-eR5"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="1t6-H1-hde" secondAttribute="bottom" constant="48" id="Ruw-HI-gNJ"/>
                 <constraint firstItem="1t6-H1-hde" firstAttribute="top" secondItem="MSU-TD-m0v" secondAttribute="bottom" id="Ylv-lf-ObI"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="1t6-H1-hde" secondAttribute="trailing" id="fjn-mK-spC"/>

@@ -29,8 +29,10 @@
 
 #pragma mark -默认设置
 - (void)defaultSet{
-    self.title = @"我的";
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    self.title = @"我的";
+    
     
     self.iconIV.layer.masksToBounds = YES;
     self.iconIV.layer.cornerRadius = 30;
