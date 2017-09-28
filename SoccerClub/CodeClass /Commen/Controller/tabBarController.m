@@ -38,17 +38,17 @@
     FirstRootViewController *firstVC = [[FirstRootViewController alloc]init];
     MatchRootViewController *matchVC = [[MatchRootViewController alloc]init];
     WebServerViewController *videoVC = [[WebServerViewController alloc]init];
-    UserCenterMainVC *centerVC = [[UserCenterMainVC alloc] init];
+//    UserCenterMainVC *centerVC = [[UserCenterMainVC alloc] init];
 //
     UINavigationController *firstNavC = [[UINavigationController alloc]initWithRootViewController:firstVC];
     UINavigationController *matchNavC = [[UINavigationController alloc]initWithRootViewController:matchVC];
     UINavigationController *videoNavC = [[UINavigationController alloc]initWithRootViewController:videoVC];
-    UINavigationController *centerNav = [[UINavigationController alloc] initWithRootViewController: centerVC];
+//    UINavigationController *centerNav = [[UINavigationController alloc] initWithRootViewController: centerVC];
     
     [self addChildViewController: firstNavC];
     [self addChildViewController: matchNavC];
     [self addChildViewController: videoNavC];
-    [self addChildViewController: centerNav];
+//    [self addChildViewController: centerNav];
     
     firstNavC.tabBarItem.title = @"首页";
     firstNavC.tabBarItem.image = [UIImage imageNamed:@"tabbar_home.png"];
@@ -56,8 +56,8 @@
     matchNavC.tabBarItem.image = [UIImage imageNamed:@"tabbar_vs.png"];
     videoNavC.tabBarItem.title = @"资讯";
     videoNavC.tabBarItem.image = [UIImage imageNamed:@"tabbar_video.png"];
-    centerNav.tabBarItem.title = @"我的";
-    centerNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_home.png"];
+//    centerNav.tabBarItem.title = @"我的";
+//    centerNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_home.png"];
     
     
     // Do any additional setup after loading the view.
