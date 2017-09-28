@@ -53,7 +53,7 @@
         _source.font = SFONT;
         _source.textAlignment = NSTextAlignmentRight;
         UILabel *CuttingLine = [[UILabel alloc] initWithFrame:CGRectMake(15, 30, CGRectGetWidth(self.frame)-30, 1)];
-        CuttingLine.backgroundColor = [UIColor redColor];
+//        CuttingLine.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:CuttingLine];
         [self.contentView addSubview:_source];
     }

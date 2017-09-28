@@ -35,8 +35,8 @@
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent]; // 改变状态栏字体
 //    self.navigationController.view.backgroundColor = [UIColor blueColor];
     
-    UIBarButtonItem *search = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchAction)];
-    self.navigationItem.rightBarButtonItem = search;
+//    UIBarButtonItem *search = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchAction)];
+//    self.navigationItem.rightBarButtonItem = search;
     
     
     _customSegmentControl = [[CustomSegmentControl alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 30)];

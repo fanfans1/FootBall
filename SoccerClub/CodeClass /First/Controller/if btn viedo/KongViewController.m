@@ -35,6 +35,8 @@
         self.mb = [[MBRefresh alloc] initWith];
     }
     // 使用web承接HTML
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     UIWebView *webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-64)];
     // 将请求放入子线程中
     NSURL *url = [NSURL URLWithString:self.str];
@@ -47,9 +49,7 @@
     
 }
 
-//-(void)tapAction{
-//    []
-//}
+
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
      [self.mb remove];

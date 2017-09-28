@@ -119,6 +119,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     [self loadData];
 //    [TestNet isConnectionAvailable];
     UINavigationController *navC = [[UINavigationController alloc]init];
@@ -166,6 +169,8 @@
             cell.soccerName.text = [dic1 objectForKey:@"name"];
             cell.soccerLeagueName.text = [dic1 objectForKey:@"leagueDesc"];
             cell.source.text = [dic1 objectForKey:@"source"];
+        
+    
             return cell;
         
     }else{

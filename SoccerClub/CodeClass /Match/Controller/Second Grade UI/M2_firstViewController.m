@@ -21,7 +21,7 @@
 
 @implementation M2_firstViewController
 -(void)property{
-    _backImage = [[UIImageView alloc] initWithFrame:CGRectMake(5, 80, CGRectGetWidth(self.view.frame)-10, 100)];
+    _backImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 80, CGRectGetWidth(self.view.frame)-10, 100)];
     [self.view addSubview:_backImage];
     
     
@@ -58,7 +58,7 @@
     _guestScore = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)-80, 100, 80, 30)];
     [self.view addSubview:_guestScore];
     
-    _homeLoge = [[UIImageView alloc] initWithFrame:CGRectMake(10, 100, 30, 30)];
+    _homeLoge = [[UIImageView alloc] initWithFrame:CGRectMake(20, 100, 30, 30)];
     [self.view addSubview:_homeLoge];
     
     _guestLoge = [[UIImageView  alloc] initWithFrame:CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds)-50, 100, 30, 30)];
@@ -138,6 +138,7 @@
             tableView.delegate = self;
             tableView.dataSource = self;
             [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+            tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
             [self.view addSubview:tableView];
         }else{
             self.matchCase.text = @"未开始";
@@ -167,6 +168,7 @@
             tableView.delegate = self;
             tableView.dataSource = self;
             [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+            tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
             [self.view addSubview:tableView];
         }else{
             self.matchCase.text = @"未开始";
@@ -184,6 +186,7 @@
         tableView.dataSource = self;
         [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
         
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [scroll addSubview:tableView];
         
     }else{
@@ -215,6 +218,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     NSArray *array = [_dic objectForKey:@"tvsV3"];
     cell.textLabel.text = [[array objectAtIndex:indexPath.row] objectForKey:@"name"];
+    
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
     return cell;
 }
 
