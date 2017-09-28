@@ -18,6 +18,7 @@
 #import "M2_thiredViewController.h"
 #import "M2_firstViewController.h"
 #import "RealizeFirst_4ViewController.h"
+#import "FirstTableViewCells.h"
 
 @interface First_0TableViewController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 @property (nonatomic,retain) NSDictionary *dataDic;
@@ -155,7 +156,8 @@
 //    self.tableView.tag = 1000;
     
     // 创建单元格
-    [self.tableView registerClass:[FirstTableViewCell class] forCellReuseIdentifier:@"CELL"];
+//    [self.tableView registerClass:[FirstTableViewCell class] forCellReuseIdentifier:@"CELL"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"FirstTableViewCells" bundle:nil] forCellReuseIdentifier:@"CELL"];
     
 //    [self.view addSubview:_tableView];
     
@@ -173,48 +175,44 @@
     
     self.myTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(imageViewAction) userInfo:nil repeats:YES];
    
- 
+    _touView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), (CGRectGetHeight(self.view.frame)/4)+10)];
     
-        //     添加头视图
-        _touView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), (CGRectGetHeight(self.view.frame)/4)+10)];
-        //        view.backgroundColor = [UIColor redColor];
-        // 关键一步；怎样让UITableView的表头随着tableView一起滚动？ // http://zhidao.baidu.com/link?url=9hrJAP0zn_WNkpGWYnUNcWG2Uo3vZPTmVoBTsvsEhwibx6blHYXQt4qPrxyKclcdbDgLY9VwvWGu7x4Hs-WtiMu5vISExCpOnsEWn2XnMlK
-        self.tableView.tableHeaderView = _touView;
+    self.tableView.tableHeaderView = _touView;
         // 添加到View上
-        [_touView addSubview:_scrollView];
-    
-        // 给scrollView 上添加透明的view承接UIPageControl（页面进度条）
-        UIView *scView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(_scrollView.frame)-30, CGRectGetWidth(self.view.frame), 30)];
-        //        scView.backgroundColor = [UIColor redColor];
-        scView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.5];
-        //scrollView下的View
-        [_touView  addSubview:scView];
-    
-    
-        //添加子视图
-        for (int i = 0; i < 4; i++) {
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)*i, 0, CGRectGetWidth(self.view.frame),CGRectGetHeight(_scrollView.frame))];
-            Model1 *model1 = [_mutableArr1 objectAtIndex:i];
-            [imageView setUserInteractionEnabled:YES];
-            imageView.tag = 1000+i;
-            
-                NSURL *url = [NSURL URLWithString:model1.thumb];
-                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"loadingimg.png"]];
-            
+    [_touView addSubview:_scrollView];
 
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetHeight(_scrollView.frame)-30, CGRectGetWidth(self.view.frame)-70, 30)];
-            label.text = model1.scTitle;
-            label.textColor = [UIColor whiteColor];
-            label.font = [UIFont systemFontOfSize:13];
-            //  NSLog(@"label--%@",label.text);
-            [imageView addSubview:label];
-            [_scrollView addSubview:imageView];
-            // 创建手势
-            UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-            [tapGR setNumberOfTouchesRequired:1];   // 触控对象的最小数量
-            [tapGR setNumberOfTapsRequired:1];   // 设置轻拍次数
-            [imageView addGestureRecognizer:tapGR];
-        }
+    // 给scrollView 上添加透明的view承接UIPageControl（页面进度条）
+    UIView *scView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(_scrollView.frame)-30, CGRectGetWidth(self.view.frame), 30)];
+    //        scView.backgroundColor = [UIColor redColor];
+    scView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.5];
+    //scrollView下的View
+    [_touView  addSubview:scView];
+
+
+    //添加子视图
+    for (int i = 0; i < 4; i++) {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)*i, 0, CGRectGetWidth(self.view.frame),CGRectGetHeight(_scrollView.frame))];
+        Model1 *model1 = [_mutableArr1 objectAtIndex:i];
+        [imageView setUserInteractionEnabled:YES];
+        imageView.tag = 1000+i;
+        
+        NSURL *url = [NSURL URLWithString:model1.thumb];
+        [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"loadingimg.png"]];
+        
+
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetHeight(_scrollView.frame)-30, CGRectGetWidth(self.view.frame)-70, 30)];
+        label.text = model1.scTitle;
+        label.textColor = [UIColor whiteColor];
+        label.font = [UIFont systemFontOfSize:13];
+        //  NSLog(@"label--%@",label.text);
+        [imageView addSubview:label];
+        [_scrollView addSubview:imageView];
+        // 创建手势
+        UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+        [tapGR setNumberOfTouchesRequired:1];   // 触控对象的最小数量
+        [tapGR setNumberOfTapsRequired:1];   // 设置轻拍次数
+        [imageView addGestureRecognizer:tapGR];
+    }
         
         
         // 添加UIPageControl （页面进度条）
@@ -355,19 +353,21 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FirstTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL" forIndexPath:indexPath];
+    FirstTableViewCells *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL" forIndexPath:indexPath];
     Model *model = [_mutableArr objectAtIndex:indexPath.item];
     NSString *str0 = @"http://in.3b2o.com/img/show/sid/";
     NSString *str1 = model.imgSid;
     NSString *str2 = @"/w/240/h/160/t/1/show.jpg";
     NSString *str = [NSString stringWithFormat:@"%@%@%@",str0,str1,str2];
     
+    cell.imageView0.layer.masksToBounds = YES;
+    cell.imageView0.layer.cornerRadius = 5;
     [cell.imageView0 sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"loadingimg.png"]];
 
     
-    
     cell.titleLabel.text = model.title;
     cell.fuTitleLabel.text = model.digest;
+    cell.fuTitleLabel.numberOfLines = 0;
     if ([model.button isEqual: @"专题"] || [model.button isEqual: @"深度"]||[model.button isEqual: @"直播"]) {
         cell.xiaLabel.text = model.button;
         cell.xiaView.backgroundColor = [UIColor blueColor];
@@ -455,7 +455,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80*SCREEN_WIDTH/414;
+    return 90;
 }
 
 /*

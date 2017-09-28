@@ -118,6 +118,9 @@
 		AAC0FCD61F7CB4B300FAEDF2 /* webGo.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC0FCD41F7CB4AA00FAEDF2 /* webGo.png */; };
 		AAC0FCD71F7CB4B300FAEDF2 /* webRefresh.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC0FCD21F7CB4AA00FAEDF2 /* webRefresh.png */; };
 		AAC0FCD91F7CC0AA00FAEDF2 /* loadingimg.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC0FCD81F7CB8FE00FAEDF2 /* loadingimg.png */; };
+		AAC0FCDD1F7CD36000FAEDF2 /* FirstTableViewCells.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC0FCDB1F7CD36000FAEDF2 /* FirstTableViewCells.m */; };
+		AAC0FCDE1F7CD36000FAEDF2 /* FirstTableViewCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC0FCDC1F7CD36000FAEDF2 /* FirstTableViewCells.xib */; };
+		AAC0FCE11F7CF56A00FAEDF2 /* M_FiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC0FCE01F7CF56A00FAEDF2 /* M_FiveViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -339,6 +342,11 @@
 		AAC0FCD31F7CB4AA00FAEDF2 /* webBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = webBack.png; sourceTree = "<group>"; };
 		AAC0FCD41F7CB4AA00FAEDF2 /* webGo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = webGo.png; sourceTree = "<group>"; };
 		AAC0FCD81F7CB8FE00FAEDF2 /* loadingimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingimg.png; sourceTree = "<group>"; };
+		AAC0FCDA1F7CD36000FAEDF2 /* FirstTableViewCells.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstTableViewCells.h; sourceTree = "<group>"; };
+		AAC0FCDB1F7CD36000FAEDF2 /* FirstTableViewCells.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstTableViewCells.m; sourceTree = "<group>"; };
+		AAC0FCDC1F7CD36000FAEDF2 /* FirstTableViewCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCells.xib; sourceTree = "<group>"; };
+		AAC0FCDF1F7CF56A00FAEDF2 /* M_FiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M_FiveViewController.h; sourceTree = "<group>"; };
+		AAC0FCE01F7CF56A00FAEDF2 /* M_FiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M_FiveViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,6 +524,8 @@
 				3CA7831D1C4F2C5000829815 /* MatchRootViewController.h */,
 				3CA7831E1C4F2C5000829815 /* MatchRootViewController.m */,
 				3CA7831F1C4F2C5000829815 /* Second Grade UI */,
+				AAC0FCDF1F7CF56A00FAEDF2 /* M_FiveViewController.h */,
+				AAC0FCE01F7CF56A00FAEDF2 /* M_FiveViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -640,6 +650,9 @@
 			children = (
 				3CB82A121C4A260800DFF46E /* FirstTableViewCell.h */,
 				3CB82A131C4A260800DFF46E /* FirstTableViewCell.m */,
+				AAC0FCDA1F7CD36000FAEDF2 /* FirstTableViewCells.h */,
+				AAC0FCDB1F7CD36000FAEDF2 /* FirstTableViewCells.m */,
+				AAC0FCDC1F7CD36000FAEDF2 /* FirstTableViewCells.xib */,
 				3CB829DD1C4A260800DFF46E /* First_1TableViewCell.h */,
 				3CB829DE1C4A260800DFF46E /* First_1TableViewCell.m */,
 				3CB829DF1C4A260800DFF46E /* First_1TableViewCell.xib */,
@@ -997,7 +1010,7 @@
 					3CD6FE521C435DFA00281B36 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = C5BX548R5T;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					3CD6FE651C435DFA00281B36 = {
 						CreatedOnToolsVersion = 7.1;
@@ -1040,6 +1053,7 @@
 				AAC0FCD71F7CB4B300FAEDF2 /* webRefresh.png in Resources */,
 				AAC0FCC91F7CA22200FAEDF2 /* NewTableViewCell.xib in Resources */,
 				AA3EEFCA1F7A62C60008D992 /* ic_landing_nickname.png in Resources */,
+				AAC0FCDE1F7CD36000FAEDF2 /* FirstTableViewCells.xib in Resources */,
 				AA3EEFCB1F7A62C60008D992 /* bg4.jpg in Resources */,
 				AA3EEFCC1F7A62C60008D992 /* goback_back_orange_on.png in Resources */,
 				34165AEB1F7A73A80055BC2E /* UserCenterMainVC.xib in Resources */,
@@ -1157,6 +1171,7 @@
 				3CA783061C4F2C0600829815 /* CollectionVideoViewController.m in Sources */,
 				3CB82A3B1C4A260800DFF46E /* First_5TableViewCell.m in Sources */,
 				3CB82A351C4A260800DFF46E /* First_2TableViewCell.m in Sources */,
+				AAC0FCE11F7CF56A00FAEDF2 /* M_FiveViewController.m in Sources */,
 				3CB82A291C4A260800DFF46E /* FirstRootViewController.m in Sources */,
 				3CB82A401C4A260800DFF46E /* Model1.m in Sources */,
 				3CB829D11C4920AF00DFF46E /* UIScrollView+MJRefresh.m in Sources */,
@@ -1213,6 +1228,7 @@
 				3CB82A251C4A260800DFF46E /* First_2TableViewController.m in Sources */,
 				3CB829CC1C4920AF00DFF46E /* MJRefreshBaseView.m in Sources */,
 				3C7A60761C48F79E006EF0E2 /* Reachability.m in Sources */,
+				AAC0FCDD1F7CD36000FAEDF2 /* FirstTableViewCells.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1351,9 +1367,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shaanxi Yiyuan Network Technology Co., Ltd. (C5BX548R5T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shaanxi Yiyuan Network Technology Co., Ltd. (C5BX548R5T)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = C5BX548R5T;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SoccerClub/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = SoccerClub/Info.plist;
@@ -1362,8 +1378,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SoccerClub.fans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "46035425-7e99-4249-8d5a-5648957cc589";
+				PROVISIONING_PROFILE_SPECIFIER = soccers;
 			};
 			name = Debug;
 		};
@@ -1373,9 +1389,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shaanxi Yiyuan Network Technology Co., Ltd. (C5BX548R5T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shaanxi Yiyuan Network Technology Co., Ltd. (C5BX548R5T)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = C5BX548R5T;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SoccerClub/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = SoccerClub/Info.plist;
@@ -1384,8 +1400,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SoccerClub.fans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "46035425-7e99-4249-8d5a-5648957cc589";
+				PROVISIONING_PROFILE_SPECIFIER = soccers;
 			};
 			name = Release;
 		};

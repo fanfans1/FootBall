@@ -35,12 +35,24 @@
     mb = [[MBRefresh alloc] initWith];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
-    [mb remove];
-}
+
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     [mb remove];
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+    [mb remove];
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('main-nav-wrap')[0].style.display = 'none'"];
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('mod-nav sub-nav')[0].style.display = 'none'"]; // MAC广告
+//    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('index_view_navigator').style.display = 'none'"];
+//    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('BAIDU_EXP_MOB__wrapper_u2363177_0').style.display = 'none'"];
+//    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('commentArea')[0].style.display = 'none'"];
+//    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('footer')[0].style.display = 'none'"];
+//    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('STRONG')[0].innerText = ''"];
+//    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('pos')[0].style.display = 'none'"];
+//    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('banner')[0].style.display = 'none'"];
+//    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('zbb_path').style.display = 'none'"];
 }
 
 -(void)backAction{

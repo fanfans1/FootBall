@@ -113,7 +113,7 @@
             }
         });
     } failure:^(NSError *error) {
-        NSLog(@"请求发生错误");
+//        NSLog(@"请求发生错误");
     }];
 }
 

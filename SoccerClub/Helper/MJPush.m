@@ -59,7 +59,7 @@
             //            [LZBLoadingView dismissLoadingView];
             [mb remove];
             success(responseObject);
-            NSLog(@"%@",responseObject);
+//            NSLog(@"%@",responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) {
@@ -67,7 +67,7 @@
             //            [LZBLoadingView dismissLoadingView];
             [mb remove];
             ALERT(@"网络有误");
-            NSLog(@"%@",error);
+//            NSLog(@"%@",error);
             
         }
     }];
@@ -109,7 +109,7 @@
             [mb remove];
             
             success(responseObject);
-            NSLog(@"%@",responseObject);
+//            NSLog(@"%@",responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) {

@@ -22,16 +22,16 @@
     UINavigationBar *bar = [UINavigationBar appearance] ;
     bar.barTintColor = BACKGROUNDCOLOR;
     
-    //设置字体颜色
-    bar.tintColor = [UIColor whiteColor];
-    [bar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-    UITabBar *bar1 = [UITabBar appearance];
-    //    bar1.barTintColor = [UIColor colorWithRed:169/255.0 green:169/255.0 blue:169/255.0 alpha:1.0];
-    bar1.barTintColor = [UIColor whiteColor];
-    //设置字体颜色
-    bar1.tintColor = [UIColor blackColor];;
+//    //设置字体颜色
+//    bar.tintColor = [UIColor whiteColor];
+//    [bar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//    
+//    UITabBar *bar1 = [UITabBar appearance];
+//    //    bar1.barTintColor = [UIColor colorWithRed:169/255.0 green:169/255.0 blue:169/255.0 alpha:1.0];
+//    bar1.barTintColor = [UIColor whiteColor];
+//    //设置字体颜色
+//    bar1.tintColor = [UIColor blackColor];;
     //    [bar1 setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     
@@ -51,11 +51,18 @@
     //    [self addChildViewController: centerNav];
     
     firstNavC.tabBarItem.title = @"首页";
-    firstNavC.tabBarItem.image = [UIImage imageNamed:@"tabbar_home.png"];
+    firstNavC.tabBarItem.image = [UIImage imageNamed:@"home.png"];
     matchNavC.tabBarItem.title = @"比赛";
-    matchNavC.tabBarItem.image = [UIImage imageNamed:@"tabbar_vs.png"];
+    matchNavC.tabBarItem.image = [UIImage imageNamed:@"VS.png"];
     videoNavC.tabBarItem.title = @"资讯";
-    videoNavC.tabBarItem.image = [UIImage imageNamed:@"tabbar_video.png"];
+    videoNavC.tabBarItem.image = [UIImage imageNamed:@"news.png"];
+    
+//    firstNavC.tabBarItem.title = @"首页";
+    firstNavC.tabBarItem.selectedImage = [UIImage imageNamed:@"homeNormal.png"];
+//    matchNavC.tabBarItem.title = @"比赛";
+    matchNavC.tabBarItem.selectedImage = [UIImage imageNamed:@"VSNormal.png"];
+//    videoNavC.tabBarItem.title = @"资讯";
+    videoNavC.tabBarItem.selectedImage = [UIImage imageNamed:@"newsNormal.png"];
     //    centerNav.tabBarItem.title = @"我的";
     //    centerNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_home.png"];
     

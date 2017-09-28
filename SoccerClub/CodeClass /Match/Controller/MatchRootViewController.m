@@ -12,6 +12,7 @@
 #import "M_secondTableViewController.h"
 #import "M_thiredTableViewController.h"
 #import "M_fourthTableViewController.h"
+#import "M_FiveViewController.h"
 #import "CustomSegmentControl.h"
 
 @interface MatchRootViewController ()<UIScrollViewDelegate>
@@ -79,12 +80,12 @@
     [_bottomScrollView addSubview:_thiredTableView.view];
 
 
-    //  添加第四个tableView
-    _fourthTableView = [[M_fourthTableViewController alloc]initWithStyle:UITableViewStylePlain];
-    _fourthTableView.view.frame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds)*3, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-64-30-49);
-
-    [self addChildViewController:_fourthTableView];
-    [_bottomScrollView addSubview:_fourthTableView.view];
+//    //  添加第四个tableView
+    M_FiveViewController *m2 = [[M_FiveViewController alloc]init];
+    m2.view.frame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds)*3, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-64-30-49);
+    m2.url = @"https://m.hupu.com/soccer/epl/topscorers";
+    [self addChildViewController:m2];
+    [_bottomScrollView addSubview:m2.view];
 
     array = [NSArray array];
     array = @[@"重要",@"未结",@"已结",@"数据"];

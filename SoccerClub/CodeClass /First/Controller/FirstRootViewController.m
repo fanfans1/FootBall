@@ -51,7 +51,7 @@
     _myScrollView.delegate = self;
     _myScrollView.bounces = NO;
     _myScrollView.showsHorizontalScrollIndicator = NO;
-    _myScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame)*5, CGRectGetHeight(self.view.frame)-139);
+    _myScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame)*4, CGRectGetHeight(self.view.frame)-139);
     
 //    for (int i = 0; i < 6; i++) {
 //        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)*i, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
