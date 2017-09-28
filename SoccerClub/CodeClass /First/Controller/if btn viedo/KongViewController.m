@@ -41,6 +41,8 @@
     // 将请求放入子线程中
     NSURL *url = [NSURL URLWithString:self.str];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    webView.scrollView.bounces = NO;
+    webView.scrollView.bouncesZoom = NO;
     [webView loadRequest:request];
     webView.delegate = self;
     webView.scrollView.bouncesZoom = NO;

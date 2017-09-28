@@ -124,6 +124,10 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 // scrollView静止时回调方法
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     int page = scrollView.contentOffset.x/CGRectGetWidth(self.view.frame);

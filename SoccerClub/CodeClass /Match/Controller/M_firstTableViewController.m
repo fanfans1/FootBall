@@ -284,7 +284,7 @@
     
     
     
-    if ([TestNet isConnectionAvailable]) {
+//    if ([TestNet isConnectionAvailable]) {
         NSDictionary *dic =[_array objectAtIndex:indexPath.section];
         
         NSMutableArray *array = [dic objectForKey:@"games"];
@@ -304,9 +304,9 @@
     M2_first.time = time;
 
         
-        M2_first.hidesBottomBarWhenPushed = YES;
+    M2_first.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:M2_first animated:YES];
-    }
+//    }
 }
 
 @end

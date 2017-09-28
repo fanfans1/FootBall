@@ -29,6 +29,7 @@
     self.webView = webView;
     self.webView.navigationDelegate = self;
     self.webView.scrollView.bounces = NO;
+    self.webView.scrollView.bouncesZoom = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self setWashWeb];

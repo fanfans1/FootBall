@@ -26,6 +26,7 @@
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
     btn.frame = CGRectMake(10, 25, 45, 35);
+    
 //    [btn setImage:[[UIImage imageNamed:@"0.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [btn setTitle:@"返回" forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:20];
@@ -35,7 +36,8 @@
     UIWebView *webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 65, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-44)];
     webView.delegate = self;
     NSURL *url = [NSURL URLWithString:self.urlString];
-    
+    webView.scrollView.bounces = NO;
+    webView.scrollView.bouncesZoom = NO;
     // 将请求放入子线程中
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // 当请求到图片的时候，回主线程为cell添加照片

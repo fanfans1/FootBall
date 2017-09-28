@@ -226,13 +226,13 @@
 
 //  点击事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([TestNet isConnectionAvailable]) {
-        
+//    if ([TestNet isConnectionAvailable]) {
+    
         CustomWebViewController *webView = [[CustomWebViewController alloc] init];
         NSArray *array = [_dic objectForKey:@"tvsV3"];
         webView.urlString  = [[[array objectAtIndex:indexPath.row] objectForKey:@"link"] objectForKey:@"url"];
         [self.navigationController pushViewController:webView animated:YES];
-    }
+//    }
   
 }
 

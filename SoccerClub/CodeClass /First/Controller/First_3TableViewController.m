@@ -107,8 +107,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([TestNet isConnectionAvailable]) {
-        
+//    if ([TestNet isConnectionAvailable]) {
+    
     KongViewController *kongVC = [[KongViewController alloc] init];
     NSString *str = [NSString stringWithFormat:@"http://zhiboba.3b2o.com/article/showForMobile/%@",[[[_mutableArr objectAtIndex:indexPath.row] objectForKey:@"target"] objectForKey:@"sid"]];
     kongVC.str = str;
@@ -116,7 +116,7 @@
 //    [self presentViewController:kongVC animated:YES completion:nil];  // 模态
 //    }
         [self.navigationController pushViewController:kongVC animated:YES];
-    }
+//    }
 }
 
 /*

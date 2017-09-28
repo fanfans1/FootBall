@@ -116,13 +116,13 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([TestNet isConnectionAvailable]) {
-        
+//    if ([TestNet isConnectionAvailable]) {
+    
     RealizeFirst_2ViewController *realize_2 = [[RealizeFirst_2ViewController alloc] init];
     realize_2.sid = [[_mutableArr objectAtIndex:indexPath.row] objectForKey:@"sid"];
     [self.navigationController pushViewController:realize_2 animated:YES];
 //    [self presentViewController:realize_2 animated:YES completion:nil];
-    }
+//    }
 }
 
 

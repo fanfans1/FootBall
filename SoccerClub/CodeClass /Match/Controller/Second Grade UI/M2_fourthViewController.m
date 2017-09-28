@@ -28,7 +28,8 @@
     _webView.delegate = self;
     NSString *webString = [_receiveDic objectForKey:@"url"];
     NSURLRequest *requst = [NSURLRequest requestWithURL:[NSURL URLWithString:webString]];
-    
+    self.webView.scrollView.bounces = NO;
+    self.webView.scrollView.bouncesZoom = NO;
     [self.webView loadRequest:requst];
     [self.view addSubview:_webView];
     mb = [[MBRefresh alloc] initWith];

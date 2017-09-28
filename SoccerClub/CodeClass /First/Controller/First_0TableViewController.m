@@ -388,8 +388,8 @@
 
 // 点击cell 的代理方法
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([TestNet isConnectionAvailable]) {
-        
+//    if ([TestNet isConnectionAvailable]) {
+    
     Model *model = [_mutableArr objectAtIndex:indexPath.item];
     if ([model.button isEqual: @"比赛"]) {
         // 调用组员写的。
@@ -404,7 +404,7 @@
 //            [self presentViewController:kongVC animated:YES completion:nil];  // 模态
         }else{
             
-                    [self.navigationController pushViewController:m2_thired animated:YES];
+            [self.navigationController pushViewController:m2_thired animated:YES];
 //            [self presentViewController:m2_thired animated:YES completion:nil];
         }
         
@@ -450,7 +450,7 @@
 //        [self presentViewController:kongVC animated:YES completion:nil];  // 模态
                 [self.navigationController pushViewController:kongVC animated:YES];
     }
-    }
+//    }
 }
 
 

@@ -95,15 +95,15 @@
 
 //  单元格点击事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([TestNet isConnectionAvailable]) {
-        
+//    if ([TestNet isConnectionAvailable]) {
+    
     
     M2_fourthViewController *M2_fourth = [[M2_fourthViewController alloc] init];
     M2_fourth.receiveDic = [_array objectAtIndex:indexPath.row];
         
     M2_fourth.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:M2_fourth animated:YES];
-    }
+//    }
 
 }
 

@@ -240,8 +240,8 @@
 
 //  单元格点击事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([TestNet isConnectionAvailable]) {
-        
+//    if ([TestNet isConnectionAvailable]) {
+    
     
     NSArray *array = [[self.array objectAtIndex:indexPath.section]objectForKey:@"games"];
     NSDictionary *dic = [array objectAtIndex:indexPath.row];
@@ -255,7 +255,7 @@
     [self presentViewController:M2_thired animated:YES completion:^{
         
     }];
-    }
+//    }
 //    [self.navigationController pushViewController:M2_thired animated:YES];
 }
 

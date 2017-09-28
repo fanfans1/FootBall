@@ -26,7 +26,9 @@
 
 
 
-@implementation M2_thiredViewController
+@implementation M2_thiredViewController{
+    MBRefresh *mb;
+}
 
 -(void)btnAction{
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -93,9 +95,13 @@
     _matchCase = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)/3-5, 110, CGRectGetWidth(self.view.frame)/3, 30)];
     _matchCase.textAlignment = NSTextAlignmentCenter;
     _matchCase.font = SFONT;
-    [self.view addSubview:_matchCase];}
+    [self.view addSubview:_matchCase];
+    
+}
 
-
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    mb = [[MBRefresh alloc] initWith];
+}
 
 
 - (void)viewDidLoad {
@@ -305,8 +311,8 @@
 
 //  点击方法
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([TestNet isConnectionAvailable]) {
-        
+//    if ([TestNet isConnectionAvailable]) {
+    
         CustomWebViewController *webView = [[CustomWebViewController alloc] init];
         if (tableView.tag == 1000) {
             NSMutableArray *array = [_dic objectForKey:@"highlights"];
@@ -323,7 +329,7 @@
         }else{
             
         }
-    }
+//    }
  
     
 }
@@ -334,7 +340,23 @@
     return 80;
 }
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [mb remove];
+}
 
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    [mb remove];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [mb remove];
+   
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    self.tabBarController.tabBar.hidden = YES;
+}
 
 
 - (void)didReceiveMemoryWarning {
