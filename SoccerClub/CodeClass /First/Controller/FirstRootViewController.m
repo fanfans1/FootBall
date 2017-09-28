@@ -32,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"首页";
+      [self.navigationController.navigationBar setBarTintColor: BACKGROUNDCOLOR];
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent]; // 改变状态栏字体
 //    self.navigationController.view.backgroundColor = [UIColor blueColor];
     

@@ -110,6 +110,13 @@
 		AA3EEFCC1F7A62C60008D992 /* goback_back_orange_on.png in Resources */ = {isa = PBXBuildFile; fileRef = AA3EEFC41F7A609D0008D992 /* goback_back_orange_on.png */; };
 		AA3EEFCD1F7A62C60008D992 /* mm_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AA3EEFC61F7A60D10008D992 /* mm_normal.png */; };
 		AA3EEFD01F7A65650008D992 /* MBRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3EEFCF1F7A65140008D992 /* MBRefresh.m */; };
+		AAC0FCC11F7C9FE000FAEDF2 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC0FCC01F7C9FE000FAEDF2 /* NewsViewController.m */; };
+		AAC0FCC41F7C9FE900FAEDF2 /* NewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC0FCC21F7C9FE900FAEDF2 /* NewModel.m */; };
+		AAC0FCC81F7C9FF000FAEDF2 /* NewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC0FCC61F7C9FF000FAEDF2 /* NewTableViewCell.m */; };
+		AAC0FCC91F7CA22200FAEDF2 /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC0FCC51F7C9FEF00FAEDF2 /* NewTableViewCell.xib */; };
+		AAC0FCD51F7CB4B300FAEDF2 /* webBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC0FCD31F7CB4AA00FAEDF2 /* webBack.png */; };
+		AAC0FCD61F7CB4B300FAEDF2 /* webGo.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC0FCD41F7CB4AA00FAEDF2 /* webGo.png */; };
+		AAC0FCD71F7CB4B300FAEDF2 /* webRefresh.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC0FCD21F7CB4AA00FAEDF2 /* webRefresh.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -320,6 +327,17 @@
 		AA3EEFC61F7A60D10008D992 /* mm_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mm_normal.png; sourceTree = "<group>"; };
 		AA3EEFCE1F7A65140008D992 /* MBRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBRefresh.h; sourceTree = "<group>"; };
 		AA3EEFCF1F7A65140008D992 /* MBRefresh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBRefresh.m; sourceTree = "<group>"; };
+		AAC0FCBF1F7C9FE000FAEDF2 /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		AAC0FCC01F7C9FE000FAEDF2 /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		AAC0FCC21F7C9FE900FAEDF2 /* NewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewModel.m; sourceTree = "<group>"; };
+		AAC0FCC31F7C9FE900FAEDF2 /* NewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewModel.h; sourceTree = "<group>"; };
+		AAC0FCC51F7C9FEF00FAEDF2 /* NewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
+		AAC0FCC61F7C9FF000FAEDF2 /* NewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewTableViewCell.m; sourceTree = "<group>"; };
+		AAC0FCC71F7C9FF000FAEDF2 /* NewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewTableViewCell.h; sourceTree = "<group>"; };
+		AAC0FCD21F7CB4AA00FAEDF2 /* webRefresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = webRefresh.png; sourceTree = "<group>"; };
+		AAC0FCD31F7CB4AA00FAEDF2 /* webBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = webBack.png; sourceTree = "<group>"; };
+		AAC0FCD41F7CB4AA00FAEDF2 /* webGo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = webGo.png; sourceTree = "<group>"; };
+		AAC0FCD81F7CB8FE00FAEDF2 /* loadingimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingimg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +454,10 @@
 				3CA782F51C4F2C0600829815 /* VideotapeSubViewController.m */,
 				3CA782F61C4F2C0600829815 /* VideotapeTableViewController.h */,
 				3CA782F71C4F2C0600829815 /* VideotapeTableViewController.m */,
+				AAC0FCBF1F7C9FE000FAEDF2 /* NewsViewController.h */,
+				AAC0FCC01F7C9FE000FAEDF2 /* NewsViewController.m */,
+				AAC0FCC31F7C9FE900FAEDF2 /* NewModel.h */,
+				AAC0FCC21F7C9FE900FAEDF2 /* NewModel.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -450,6 +472,9 @@
 		3CA782F91C4F2C0600829815 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AAC0FCC71F7C9FF000FAEDF2 /* NewTableViewCell.h */,
+				AAC0FCC61F7C9FF000FAEDF2 /* NewTableViewCell.m */,
+				AAC0FCC51F7C9FEF00FAEDF2 /* NewTableViewCell.xib */,
 				3CA782FA1C4F2C0600829815 /* CollectionVideoTableViewCell.h */,
 				3CA782FB1C4F2C0600829815 /* CollectionVideoTableViewCell.m */,
 				3CA782FC1C4F2C0600829815 /* CollectionVideoTableViewCell1.h */,
@@ -750,7 +775,11 @@
 		3CD6FE8F1C435F7400281B36 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AAC0FCD81F7CB8FE00FAEDF2 /* loadingimg.png */,
 				3C3B45DC1C5A1B0500BA9317 /* logoPlace.jpg */,
+				AAC0FCD31F7CB4AA00FAEDF2 /* webBack.png */,
+				AAC0FCD41F7CB4AA00FAEDF2 /* webGo.png */,
+				AAC0FCD21F7CB4AA00FAEDF2 /* webRefresh.png */,
 				3CF4DEC41C58AD5700F8D47C /* Placegolder.png */,
 				3CD6FEAB1C4382DE00281B36 /* tabbar_video.png */,
 				3CD6FEA71C4382D800281B36 /* tabbar_home.png */,
@@ -966,7 +995,7 @@
 				TargetAttributes = {
 					3CD6FE521C435DFA00281B36 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = J9C3B435Q6;
+						DevelopmentTeam = C5BX548R5T;
 						ProvisioningStyle = Automatic;
 					};
 					3CD6FE651C435DFA00281B36 = {
@@ -1004,6 +1033,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC0FCD51F7CB4B300FAEDF2 /* webBack.png in Resources */,
+				AAC0FCD61F7CB4B300FAEDF2 /* webGo.png in Resources */,
+				AAC0FCD71F7CB4B300FAEDF2 /* webRefresh.png in Resources */,
+				AAC0FCC91F7CA22200FAEDF2 /* NewTableViewCell.xib in Resources */,
 				AA3EEFCA1F7A62C60008D992 /* ic_landing_nickname.png in Resources */,
 				AA3EEFCB1F7A62C60008D992 /* bg4.jpg in Resources */,
 				AA3EEFCC1F7A62C60008D992 /* goback_back_orange_on.png in Resources */,
@@ -1106,6 +1139,7 @@
 				AA3EEFC91F7A61A70008D992 /* settingPassWardViewController.m in Sources */,
 				34165AE31F7A561F0055BC2E /* HttpManager.m in Sources */,
 				34165AE21F7A561A0055BC2E /* HttpManager.h in Sources */,
+				AAC0FCC81F7C9FF000FAEDF2 /* NewTableViewCell.m in Sources */,
 				AA3EEFAD1F7A45950008D992 /* MBViewController.m in Sources */,
 				3CB829D01C4920AF00DFF46E /* UIScrollView+MJExtension.m in Sources */,
 				3CB82A341C4A260800DFF46E /* Model2.m in Sources */,
@@ -1135,6 +1169,7 @@
 				3CB82A241C4A260800DFF46E /* First_1TableViewController.m in Sources */,
 				3CA783381C4F2C5000829815 /* M2_thiredViewController.m in Sources */,
 				3CA783341C4F2C5000829815 /* M_thiredTableViewController.m in Sources */,
+				AAC0FCC11F7C9FE000FAEDF2 /* NewsViewController.m in Sources */,
 				3CA7830D1C4F2C0600829815 /* CollectionVideoTableViewCell.m in Sources */,
 				AA3EEFB01F7A45B00008D992 /* MJPush.m in Sources */,
 				3CB82A3F1C4A260800DFF46E /* Model.m in Sources */,
@@ -1165,6 +1200,7 @@
 				3CB82A321C4A260800DFF46E /* RealizeFirst_4ViewController.m in Sources */,
 				3CA783071C4F2C0600829815 /* VideoCollectionTableViewController.m in Sources */,
 				3CA7830A1C4F2C0600829815 /* VideoSiftTableViewController.m in Sources */,
+				AAC0FCC41F7C9FE900FAEDF2 /* NewModel.m in Sources */,
 				3CB82A261C4A260800DFF46E /* First_3TableViewController.m in Sources */,
 				3CB82A271C4A260800DFF46E /* First_4TableViewController.m in Sources */,
 				34165AEA1F7A73A80055BC2E /* UserCenterMainVC.m in Sources */,
@@ -1316,13 +1352,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J9C3B435Q6;
+				DEVELOPMENT_TEAM = C5BX548R5T;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SoccerClub/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = SoccerClub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SoccerClub.fan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SoccerClub.fans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1338,13 +1374,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J9C3B435Q6;
+				DEVELOPMENT_TEAM = C5BX548R5T;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SoccerClub/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = SoccerClub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SoccerClub.fan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SoccerClub.fans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

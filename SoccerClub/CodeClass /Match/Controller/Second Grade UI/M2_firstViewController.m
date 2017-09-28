@@ -148,9 +148,9 @@
         self.homeInfo.text = [[[_dic objectForKey:@"program"] objectForKey:@"hostInfo"] objectForKey:@"name"];
         self.guestInfo.text = [[[_dic objectForKey:@"program"] objectForKey:@"guestInfo"] objectForKey:@"name"];
         NSURL *url = [NSURL URLWithString:[[[_dic objectForKey:@"program"] objectForKey:@"hostInfo"] objectForKey:@"logo"]];
-        [self.homeLoge sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
+        [self.homeLoge sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"loadingimg.png"]];
         NSURL *url1 = [NSURL URLWithString:[[[_dic objectForKey:@"program"] objectForKey:@"guestInfo"] objectForKey:@"logo"]];
-        [self.guestLoge sd_setImageWithURL:url1 placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
+        [self.guestLoge sd_setImageWithURL:url1 placeholderImage:[UIImage imageNamed:@"loadingimg.png"]];
         self.guestScore.text = [[[_dic objectForKey:@"program"]objectForKey:@"hostInfo"] objectForKey:@"score"];
         self.homeScore.text = [[[_dic objectForKey:@"program"] objectForKey:@"guestInfo"] objectForKey:@"score"];
         self.matchTime.text = [[_dic objectForKey:@"program"]  objectForKey:@"detailtime"];

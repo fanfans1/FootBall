@@ -106,7 +106,7 @@
     }
     
     NSString *str = [NSString stringWithFormat:@"http://in.3b2o.com/img/show/sid/%@/w//h//t/1/show.jpg",[[_mutableArr objectAtIndex:indexPath.row]objectForKey:@"coverImgSid"]];
-    [cell.imageI sd_setImageWithURL:[NSURL URLWithString:str]placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+    [cell.imageI sd_setImageWithURL:[NSURL URLWithString:str]placeholderImage:[UIImage imageNamed:@"loadingimg.png"]];
     cell.label0.text = [[_mutableArr objectAtIndex:indexPath.row]objectForKey:@"title"];
     cell.label1.text = [[_mutableArr objectAtIndex:indexPath.row]objectForKey:@"lastUpdate"];
     cell.label2.text = [[_mutableArr objectAtIndex:indexPath.row]objectForKey:@"brief"];

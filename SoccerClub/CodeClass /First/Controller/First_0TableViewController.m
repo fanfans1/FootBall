@@ -173,7 +173,7 @@
     
     self.myTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(imageViewAction) userInfo:nil repeats:YES];
    
-//    self.myTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(imageViewAction) userInfo:nil repeats:YES];
+ 
     
         //     添加头视图
         _touView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), (CGRectGetHeight(self.view.frame)/4)+10)];
@@ -182,66 +182,6 @@
         self.tableView.tableHeaderView = _touView;
         // 添加到View上
         [_touView addSubview:_scrollView];
-    
-    
-//        for (int i = 0; i < _mutableArr2.count; i++) {
-//            Model2 *model2 = [_mutableArr2 objectAtIndex:i];
-//            // 创建俩view
-//            UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(((CGRectGetWidth(self.view.frame)/2*1+5))*i+5, CGRectGetHeight(_scrollView.frame)+10, (CGRectGetWidth(self.view.frame)/2*1)-15, CGRectGetHeight(_scrollView.frame)/2*1)];
-//            view1.tag = 9000+i;
-////            view1.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0];
-//            view1.backgroundColor = [UIColor colorWithRed:95/255.0 green:158/255.0 blue:160/255.0 alpha:1.0];
-//            [_touView addSubview:view1];
-//            // 联赛名；
-//            UILabel *viewLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 7, 55, 20)];
-//            viewLabel1.text = model2.leagueDesc;
-//            viewLabel1.font = [UIFont systemFontOfSize:13];
-//            [view1 addSubview:viewLabel1];
-//            // 比赛进程
-//            UILabel *viewLabel2 = [[UILabel alloc] initWithFrame:CGRectMake((CGRectGetWidth(view1.frame)/7*4)-15, 7, 70, 20)];
-//            viewLabel2.text = model2.timeName;
-//            viewLabel2.textAlignment = NSTextAlignmentRight;
-//            viewLabel2.font = [UIFont systemFontOfSize:13];
-//            [view1 addSubview:viewLabel2];
-//            // 线 label
-//            UIView *xianView = [[UIView alloc]  initWithFrame:CGRectMake(13, 27, CGRectGetWidth(view1.frame)-40, 1)];
-//
-//            xianView.backgroundColor = [UIColor whiteColor];
-//            [view1 addSubview:xianView];
-//            // 主场 标志
-//            UIImageView *zhuImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, (CGRectGetHeight(view1.frame)/7*3)+1, 15, 15)];
-//            [zhuImageView sd_setImageWithURL:[NSURL URLWithString:[model2.guestInfo valueForKey:@"logo"]]placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
-//
-//            [view1 addSubview:zhuImageView];
-//            // 客场 标志
-//            UIImageView *keImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, (CGRectGetHeight(view1.frame)/7*5)+1, 15, 15)];
-//            [keImageView sd_setImageWithURL:[NSURL URLWithString:[model2.homeInfo valueForKey:@"logo"]]placeholderImage:[UIImage imageNamed:@"logoPlace.jpg"]];
-//            [view1 addSubview:keImageView];
-//            // 主 队名
-//            UILabel *zhumLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, (CGRectGetHeight(view1.frame)/7*2)+4, 100, 30)];
-//            zhumLabel.text = [model2.guestInfo valueForKey:@"name"];
-//            zhumLabel.font = [UIFont systemFontOfSize:13];
-//            [view1 addSubview:zhumLabel];
-//            // 客 队名
-//            UILabel *kemLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, (CGRectGetHeight(view1.frame)/7*4)+4, 100, 30)];
-//            kemLabel.text = [model2.homeInfo valueForKey:@"name"];
-//            kemLabel.font = [UIFont systemFontOfSize:13];
-//            [view1 addSubview:kemLabel];
-//            // 主 进球数
-//            UILabel *zhuLabel = [[UILabel alloc] initWithFrame:CGRectMake((CGRectGetWidth(view1.frame)/7*6), (CGRectGetHeight(view1.frame)/7*3)-1, 20, 20)];
-//            zhuLabel.text = [model2.guestInfo valueForKey:@"score"];
-//            [view1 addSubview:zhuLabel];
-//            // 客 进球数
-//            UILabel *keLabel = [[UILabel alloc] initWithFrame:CGRectMake((CGRectGetWidth(view1.frame)/7*6), (CGRectGetHeight(view1.frame)/7*5)-1, 20, 20)];
-//            keLabel.text = [model2.homeInfo valueForKey:@"score"];
-//            [view1 addSubview:keLabel];
-//
-//            // 创建手势
-//            UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction2:)];
-//            [tapGR setNumberOfTouchesRequired:1];   // 触控对象的最小数量
-//            [tapGR setNumberOfTapsRequired:1];   // 设置轻拍次数
-//            [view1 addGestureRecognizer:tapGR];
-//        }
     
         // 给scrollView 上添加透明的view承接UIPageControl（页面进度条）
         UIView *scView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(_scrollView.frame)-30, CGRectGetWidth(self.view.frame), 30)];
@@ -259,7 +199,7 @@
             imageView.tag = 1000+i;
             
                 NSURL *url = [NSURL URLWithString:model1.thumb];
-                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"loadingimg.png"]];
             
 
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetHeight(_scrollView.frame)-30, CGRectGetWidth(self.view.frame)-70, 30)];
@@ -422,19 +362,7 @@
     NSString *str2 = @"/w/240/h/160/t/1/show.jpg";
     NSString *str = [NSString stringWithFormat:@"%@%@%@",str0,str1,str2];
     
-//  废弃
-    // 将请求放入子线程中
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:str]]];
-
-        // 当请求到图片的时候，回主线程为cell添加照片
-        dispatch_async(dispatch_get_main_queue(), ^{
-
-            cell.imageView0.image = image;
-
-        });
-    });
+    [cell.imageView0 sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"loadingimg.png"]];
 
     
     

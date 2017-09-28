@@ -143,7 +143,7 @@
     cell.shuzi.text = [[_mutableArr objectAtIndex:indexPath.row] objectForKey:@"comm_count"];
     cell.shijian.text = [[_mutableArr objectAtIndex:indexPath.row]objectForKey:@"modtime_desc"];
     NSString *str = [NSString stringWithFormat:@"http://in.3b2o.com/img/show/sid/%@/w//h//t/1/show.jpg",[[_mutableArr objectAtIndex:indexPath.row]objectForKey:@"thumb_id"]];
-    [cell.zhaopian sd_setImageWithURL:[NSURL URLWithString:str]placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+    [cell.zhaopian sd_setImageWithURL:[NSURL URLWithString:str]placeholderImage:[UIImage imageNamed:@"loadingimg.png"]];
     return cell;
 //    NSLog(@"");
 }

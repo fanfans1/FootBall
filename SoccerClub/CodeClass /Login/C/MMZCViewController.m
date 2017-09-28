@@ -32,11 +32,7 @@
 
 @implementation MMZCViewController
 
--(void)viewWillAppear:(BOOL)animated
-{
-   //[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:216/255.0f green:209/255.0f blue:192/255.0f alpha:1]];
-    self.navigationController.navigationBarHidden = YES;
-}
+
 
 - (void)viewDidLoad
 {
@@ -49,7 +45,7 @@
     View.image=[UIImage imageNamed:@"bg4.jpg"];
     [self.view addSubview:View];
     
- 
+    self.title = @"登录";
     UIButton *but =[[UIButton alloc]initWithFrame:CGRectMake(5, 27, 35, 35)];
     [but setImage:[UIImage imageNamed:@"goback_back_orange_on"] forState:UIControlStateNormal];
     [but addTarget:self action:@selector(clickaddBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -57,17 +53,17 @@
     
     UIButton *zhuce =[[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width-60, 30, 50, 30)];
     [zhuce setTitle:@"注册" forState:UIControlStateNormal];
-    [zhuce setTitleColor:[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1] forState:UIControlStateNormal];
-//    zhuce.font=[UIFont systemFontOfSize:17];
+    [zhuce setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //    zhuce.font=[UIFont systemFontOfSize:17];
     [zhuce addTarget:self action:@selector(zhuce) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:zhuce];
-    
+    //    [self.view addSubview:zhuce];
+    self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc]  initWithCustomView:zhuce];
     
     UILabel *lanel=[[UILabel alloc]initWithFrame:CGRectMake((self.view.frame.size.width-30)/2, 30, 50, 30)];
     lanel.text=@"登录";
     lanel.textColor=[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1];
     [self.view addSubview:lanel];
-
+    
     
     [self createButtons];
     [self createImageViews];
@@ -78,15 +74,15 @@
 
 -(void)clickaddBtn:(UIButton *)button
 {
-//      [kAPPDelegate appDelegateInitTabbar];
-    self.view.backgroundColor=[UIColor whiteColor];
-    exit(0);
+    //      [kAPPDelegate appDelegateInitTabbar];
+    //    self.view.backgroundColor=[UIColor whiteColor];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
 -(void)createLabel
 {
- 
+    
 }
 
 -(void)createTextFields
@@ -102,14 +98,14 @@
     //user.text=@"13419693608";
     user.keyboardType=UIKeyboardTypeNumberPad;
     user.clearButtonMode = UITextFieldViewModeWhileEditing;
-   
+    
     pwd=[self createTextFielfFrame:CGRectMake(60, 60, 271, 30) font:[UIFont systemFontOfSize:14]  placeholder:@"密码" ];
     pwd.clearButtonMode = UITextFieldViewModeWhileEditing;
     //pwd.text=@"123456";
     //密文样式
     pwd.secureTextEntry=YES;
     //pwd.keyboardType=UIKeyboardTypeNumberPad;
-
+    
     
     UIImageView *userImageView=[self createImageViewFrame:CGRectMake(20, 10, 25, 25) imageName:@"ic_landing_nickname" color:nil];
     UIImageView *pwdImageView=[self createImageViewFrame:CGRectMake(20, 60, 25, 25) imageName:@"mm_normal" color:nil];
@@ -139,7 +135,7 @@
 
 -(void)createImageViews
 {
-
+    
     
 }
 
@@ -150,18 +146,18 @@
     landBtn.backgroundColor=[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1];
     landBtn.layer.cornerRadius=5.0f;
     
-  
     
-      #define Start_X 60.0f           // 第一个按钮的X坐标
-      #define Start_Y 440.0f           // 第一个按钮的Y坐标
-      #define Width_Space 50.0f        // 2个按钮之间的横间距
-      #define Height_Space 20.0f      // 竖间距
-      #define Button_Height 50.0f    // 高
-      #define Button_Width 50.0f      // 宽
+    
+#define Start_X 60.0f           // 第一个按钮的X坐标
+#define Start_Y 440.0f           // 第一个按钮的Y坐标
+#define Width_Space 50.0f        // 2个按钮之间的横间距
+#define Height_Space 20.0f      // 竖间距
+#define Button_Height 50.0f    // 高
+#define Button_Width 50.0f      // 宽
     [self.view addSubview:landBtn];
-//    [self.view addSubview:newUserBtn];
-//    [self.view addSubview:forgotPwdBtn];
-
+    //    [self.view addSubview:newUserBtn];
+    //    [self.view addSubview:forgotPwdBtn];
+    
     
 }
 
@@ -180,7 +176,7 @@
     
 }
 
-                     
+
 -(UITextField *)createTextFielfFrame:(CGRect)frame font:(UIFont *)font placeholder:(NSString *)placeholder
 {
     UITextField *textField=[[UITextField alloc]initWithFrame:frame];
@@ -248,40 +244,43 @@
     if ([user.text isEqualToString:@""])
     {
         //[SVProgressHUD showInfoWithStatus:@"亲,请输入用户名"];
+        ALERT(@"请输入用户名")
         return;
     }
     else if (user.text.length <11)
     {
-        //[SVProgressHUD showInfoWithStatus:@"您输入的手机号码格式不正确"];
+        ALERT(@"您输入的手机号码格式不正确");
         return;
     }
     else if ([pwd.text isEqualToString:@""])
     {
-        //[SVProgressHUD showInfoWithStatus:@"亲,请输入密码"];
+        ALERT(@"亲,请输入密码");
         return;
+    }else{
+        if ([user.text  isEqual: @"13011236654"] && [pwd.text  isEqual:  @"123456"]) {
+            ALERT(@"登录成功");
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
-    else if (pwd.text.length <6)
-    {
-        //[SVProgressHUD showInfoWithStatus:@"亲,密码长度至少六位"];
-        return;
-    }
+    
     
 }
 
 //注册
 -(void)zhuce
 {
-    [self.navigationController pushViewController:[[MMZCHMViewController alloc]init] animated:YES];
+    [self.navigationController pushViewController:[[MMZCHMViewController alloc] init] animated:YES];
+    
 }
 
 -(void)registration:(UIButton *)button
 {
-   [self.navigationController pushViewController:[[MMZCHMViewController alloc]init] animated:YES];
+    [self.navigationController pushViewController:[[MMZCHMViewController alloc] init] animated:YES];
 }
 
 -(void)fogetPwd:(UIButton *)button
 {
-   
+    
 }
 
 #pragma mark - 工具
@@ -322,6 +321,17 @@
     return chuLi;
 }
 
+
+- (void)viewWillDisappear:(BOOL)animated{
+    //    self.navigationController.navigationBar.hidden = NO;
+    self.tabBarController.tabBar.hidden = NO;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    //    self.navigationController.navigationBar.hidden = YES;
+    self.tabBarController.tabBar.hidden = YES;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -331,3 +341,4 @@
 
 
 @end
+

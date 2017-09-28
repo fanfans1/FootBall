@@ -97,7 +97,7 @@
             //    NSLog(@"dic=%@",dic);
             NSDictionary *dic2 = [[dic objectForKey:@"items"] objectAtIndex:0];  // 取出了每一个
 //            NSLog(@"arr = %@",dic2);/
-            [imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://in.3b2o.com/img/show/sid/%@/w//h//t/1/show.jpg",[dic2 objectForKey:@"imgSid"]]]placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+            [imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://in.3b2o.com/img/show/sid/%@/w//h//t/1/show.jpg",[dic2 objectForKey:@"imgSid"]]]placeholderImage:[UIImage imageNamed:@"loadingimg.png"]];
         }
         //______
         
@@ -192,7 +192,7 @@
 //    NSLog(@"dic=%@",dic);
     NSDictionary *dic2 = [[dic objectForKey:@"items"] objectAtIndex:indexPath.row];  // 取出了每一个
 //    NSLog(@"arr = %@",dic2);
-    [cell.zhaopian sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://in.3b2o.com/img/show/sid/%@/w//h//t/1/show.jpg",[dic2 objectForKey:@"imgSid"]]]placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+    [cell.zhaopian sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://in.3b2o.com/img/show/sid/%@/w//h//t/1/show.jpg",[dic2 objectForKey:@"imgSid"]]]placeholderImage:[UIImage imageNamed:@"loadingimg.png"]];
     cell.label1.text = [dic2 objectForKey:@"title"];
     cell.label2.text = [dic2 objectForKey:@"digest"];
     

@@ -8,9 +8,9 @@
 
 #import "tabBarController.h"
 
-#import "UserCenterMainVC.h"
-
-@interface tabBarController ()
+//#import "UserCenterMainVC.h"
+#import "NewsViewController.h"
+@interface tabBarController ()<UITabBarDelegate>
 
 @end
 
@@ -28,27 +28,27 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     UITabBar *bar1 = [UITabBar appearance];
-//    bar1.barTintColor = [UIColor colorWithRed:169/255.0 green:169/255.0 blue:169/255.0 alpha:1.0];
+    //    bar1.barTintColor = [UIColor colorWithRed:169/255.0 green:169/255.0 blue:169/255.0 alpha:1.0];
     bar1.barTintColor = [UIColor whiteColor];
     //设置字体颜色
     bar1.tintColor = [UIColor blackColor];;
-//    [bar1 setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-
+    //    [bar1 setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
     
     FirstRootViewController *firstVC = [[FirstRootViewController alloc]init];
     MatchRootViewController *matchVC = [[MatchRootViewController alloc]init];
-    WebServerViewController *videoVC = [[WebServerViewController alloc]init];
-//    UserCenterMainVC *centerVC = [[UserCenterMainVC alloc] init];
-//
+    NewsViewController *videoVC = [[NewsViewController alloc]init];
+    //    UserCenterMainVC *centerVC = [[UserCenterMainVC alloc] init];
+    //
     UINavigationController *firstNavC = [[UINavigationController alloc]initWithRootViewController:firstVC];
     UINavigationController *matchNavC = [[UINavigationController alloc]initWithRootViewController:matchVC];
     UINavigationController *videoNavC = [[UINavigationController alloc]initWithRootViewController:videoVC];
-//    UINavigationController *centerNav = [[UINavigationController alloc] initWithRootViewController: centerVC];
+    //    UINavigationController *centerNav = [[UINavigationController alloc] initWithRootViewController: centerVC];
     
     [self addChildViewController: firstNavC];
     [self addChildViewController: matchNavC];
     [self addChildViewController: videoNavC];
-//    [self addChildViewController: centerNav];
+    //    [self addChildViewController: centerNav];
     
     firstNavC.tabBarItem.title = @"首页";
     firstNavC.tabBarItem.image = [UIImage imageNamed:@"tabbar_home.png"];
@@ -56,11 +56,17 @@
     matchNavC.tabBarItem.image = [UIImage imageNamed:@"tabbar_vs.png"];
     videoNavC.tabBarItem.title = @"资讯";
     videoNavC.tabBarItem.image = [UIImage imageNamed:@"tabbar_video.png"];
-//    centerNav.tabBarItem.title = @"我的";
-//    centerNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_home.png"];
+    //    centerNav.tabBarItem.title = @"我的";
+    //    centerNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_home.png"];
     
     
     // Do any additional setup after loading the view.
+}
+
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+//    NSLog(@"%@",item.title);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,3 +77,4 @@
 
 
 @end
+

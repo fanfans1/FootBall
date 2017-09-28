@@ -36,7 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"比赛";
-
+  [self.navigationController.navigationBar setBarTintColor: BACKGROUNDCOLOR];
     
     
     //  添加scrollView

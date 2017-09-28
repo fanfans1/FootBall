@@ -102,7 +102,7 @@
     VideoHotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL" forIndexPath:indexPath];
     NSDictionary *dic = [self.allDataArray objectAtIndex:indexPath.row];
     cell.videoNameLabel.text = [dic objectForKey:@"bname"];
-    [cell.videoImageView sd_setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"imgUrl"]]placeholderImage:[UIImage imageNamed:@"Placegolder.png"]];
+    [cell.videoImageView sd_setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"imgUrl"]]placeholderImage:[UIImage imageNamed:@"loadingimg.png"]];
     cell.videoLengthLabel.text = [dic objectForKey:@"blength"];
     cell.timeLabel = [dic objectForKey:@"modtime"];
     cell.numberLabel.text = [NSString stringWithFormat:@"%d",(int)indexPath.row+1];
